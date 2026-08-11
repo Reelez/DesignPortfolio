@@ -1,0 +1,10 @@
+Django>=5.0,<6.0
+djangorestframework
+django-environ
+django-cors-headers
+cloudinary
+django-cloudinary-storage
+Pillow
+
+# Production-only (Postgres driver). Not required for local SQLite development.
+psycopg2-binary
