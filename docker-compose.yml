@@ -1,0 +1,32 @@
+services:
+  backend:
+    build: ./backend
+    env_file:
+      - .env
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.local
+    volumes:
+      - ./backend:/app
+      - backend_venv:/app/venv
+    ports:
+      - "8000:8000"
+      - "3000:3000"
+
+  # Shares backend's network namespace so both containers agree on
+  # "localhost:8000" — the frontend's server-side fetches AND the
+  # browser need the SAME host, since Django builds absolute media
+  # URLs from the incoming request's Host header.
+  frontend:
+    build: ./frontend
+    network_mode: "service:backend"
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+    volumes:
+      - ./frontend:/app
+      - frontend_node_modules:/app/node_modules
+    depends_on:
+      - backend
+
+volumes:
+  backend_venv:
+  frontend_node_modules:

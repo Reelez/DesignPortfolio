@@ -4,7 +4,9 @@ django-environ
 django-cors-headers
 cloudinary
 django-cloudinary-storage
+django-bunny
 Pillow
 
-# Production-only (Postgres driver). Not required for local SQLite development.
+# Production-only (Postgres driver + WSGI server). Not required for local SQLite development.
 psycopg2-binary
+gunicorn

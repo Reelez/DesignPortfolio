@@ -1,6 +1,17 @@
 import Link from "next/link";
 import type { Category } from "@/lib/api/types";
 
+// Fixed display order for category tabs; unlisted slugs fall back to the
+// end in whatever order the API returned them.
+const CATEGORY_ORDER = [
+  "murals",
+  "fine-art",
+  "brand-design",
+  "graphic-design",
+  "product-design",
+  "web-design",
+];
+
 /**
  * Server-rendered category filter using plain <Link> navigation with a
  * `?category=<slug>` query param. No client-side state/JS needed — the
@@ -13,18 +24,18 @@ export default function CategoryFilter({
   categories: Category[];
   activeSlug?: string;
 }) {
-  const base = "tracking-label text-xs pb-1 border-b-2 transition";
-  const active = "border-accent text-foreground";
-  const inactive = "border-transparent text-muted hover:text-foreground";
+  const base =
+    "font-anton text-sm px-4 py-2 border border-black transition-colors duration-200";
+  const active = "bg-black text-white";
+  const inactive = "bg-white text-black hover:bg-black hover:text-white";
+
+  const orderedCategories = [...categories].sort(
+    (a, b) => CATEGORY_ORDER.indexOf(a.slug) - CATEGORY_ORDER.indexOf(b.slug),
+  );
 
   return (
-    <ul className="flex flex-wrap gap-6 border-b border-line pb-6">
-      <li>
-        <Link href="/portfolio" className={`${base} ${!activeSlug ? active : inactive}`}>
-          All Work
-        </Link>
-      </li>
-      {categories.map((category) => (
+    <ul className="flex flex-wrap gap-3 border-b border-black pb-8">
+      {orderedCategories.map((category) => (
         <li key={category.id}>
           <Link
             href={`/portfolio?category=${category.slug}`}

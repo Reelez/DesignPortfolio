@@ -1,5 +1,29 @@
+import Link from "next/link";
 import { getProjects } from "@/lib/api/projects";
 import { getSiteSettings } from "@/lib/api/site";
+import MenuOverlay from "@/components/MenuOverlay";
+
+function ViewMoreButton({
+  category,
+  variant = "dark",
+}: {
+  category: string;
+  variant?: "dark" | "light";
+}) {
+  const base =
+    "group mt-10 inline-flex items-center gap-2 border px-8 py-3 text-xs font-medium tracking-widest uppercase transition-colors duration-300";
+  const styles =
+    variant === "dark"
+      ? "border-white text-white hover:bg-white hover:text-black"
+      : "border-black text-black hover:bg-black hover:text-white";
+
+  return (
+    <Link href={`/portfolio?category=${category}`} className={`${base} ${styles}`}>
+      View More
+      <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+    </Link>
+  );
+}
 
 export default async function Home() {
   const [allProjects, site] = await Promise.all([getProjects(), getSiteSettings()]);
@@ -34,21 +58,15 @@ export default async function Home() {
         <div className="relative flex w-full flex-col justify-center bg-black p-8 text-white md:w-1/2 md:p-16">
           <div className="absolute top-8 left-8 right-8 flex items-start justify-between">
             <h1 className="text-xl font-medium tracking-tight">Julian Jeffreys</h1>
-            <div className="flex cursor-pointer flex-col items-center gap-2">
-              <div className="flex w-6 flex-col gap-1">
-                <span className="block h-0.5 w-full bg-white" />
-                <span className="block h-0.5 w-full bg-white" />
-                <span className="block h-0.5 w-full bg-white" />
-              </div>
-              <span className="vertical-text mt-2 text-xs tracking-widest">MENU</span>
-            </div>
+            <MenuOverlay variant="dark" />
           </div>
           <div className="mt-20 text-right md:mt-0">
             <h2 className="font-anton flex flex-col gap-2 text-5xl leading-none md:text-7xl lg:text-8xl">
               <span>MURALS</span>
               <span>FINE ART</span>
-              <span>GRAPHIC DESIGN</span>
+              <span>WEB DESIGN</span>
               <span>BRAND DESIGN</span>
+              <span>GRAPHIC DESIGN</span>
             </h2>
             <a
               href="#work"
@@ -140,6 +158,7 @@ export default async function Home() {
               </div>
             ))}
           </div>
+          <ViewMoreButton category="murals" variant="dark" />
         </div>
       </section>
       {/* END: Murals Section */}
@@ -164,6 +183,7 @@ export default async function Home() {
               </div>
             ))}
           </div>
+          <ViewMoreButton category="fine-art" variant="light" />
         </div>
       </section>
       {/* END: Fine Art Section */}
@@ -195,6 +215,7 @@ export default async function Home() {
               </div>
             ))}
           </div>
+          <ViewMoreButton category="graphic-design" variant="dark" />
         </div>
       </section>
       {/* END: Graphic Design Section */}

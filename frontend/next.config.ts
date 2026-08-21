@@ -5,10 +5,14 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       // Django dev media server (local.py, FileSystemStorage-backed).
       { protocol: "http", hostname: "localhost", port: "8000" },
-      // TODO: add Cloudinary's domain (e.g. res.cloudinary.com) once real
-      // CLOUDINARY_URL credentials exist and next/image is adopted for
-      // remote-hosted media (plain <img> is used for now, see ProjectCard/Gallery).
+      // Cloudinary-hosted media (production, once CLOUDINARY_URL is set).
+      { protocol: "https", hostname: "res.cloudinary.com" },
     ],
+    // The Django dev media server resolves to localhost, which Next's image
+    // optimizer otherwise blocks as a private-IP SSRF risk. Safe here since
+    // it's local-only dev media (see remotePatterns above); production only
+    // ever proxies Cloudinary's public domain.
+    dangerouslyAllowLocalIP: true,
   },
 };
 

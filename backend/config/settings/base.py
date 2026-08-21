@@ -110,3 +110,13 @@ else:
         },
     }
     MEDIA_URL = "/media/"
+
+# --- Bunny.net storage gate for video MediaItems (see apps/media_items/storage.py). ---
+# Independent from the CLOUDINARY_URL gate above: images keep using the
+# `default` storage (Cloudinary/local), video routes to Bunny only when
+# these are set. No default: video falls back to `default` storage until
+# a real Bunny Storage Zone exists.
+BUNNY_STORAGE_ZONE = env("BUNNY_STORAGE_ZONE", default="")
+BUNNY_STORAGE_PASSWORD = env("BUNNY_STORAGE_PASSWORD", default="")
+BUNNY_STORAGE_REGION = env("BUNNY_STORAGE_REGION", default="ny")
+BUNNY_PULL_ZONE_HOSTNAME = env("BUNNY_PULL_ZONE_HOSTNAME", default="")
