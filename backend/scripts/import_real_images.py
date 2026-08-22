@@ -23,9 +23,16 @@ import io
 import os
 from pathlib import Path
 
+import cloudinary
 from django.core.files.base import ContentFile
+from django.db import connection
 from django.utils.text import slugify
 from PIL import Image
+
+# Cloudinary's SDK has no default network timeout, so a stalled upload can
+# hang forever instead of failing. Bound it so the per-project retry below
+# actually gets a chance to kick in on a flaky connection.
+cloudinary.config().timeout = 30
 
 from apps.media_items.models import MediaItem
 from apps.projects.models import Category, Project
@@ -125,45 +132,62 @@ for category_dir_name, (cat_name, cat_slug) in CATEGORY_MAP.items():
         title = project_dir.name
         slug = f"{cat_slug}-{slugify(title)}"
 
-        project, created = Project.objects.update_or_create(
-            slug=slug,
-            defaults={
-                "title": title,
-                "category": category,
-                "status": Project.Status.PUBLISHED,
-                "order": order,
-            },
-        )
+        # Uploading each image (Cloudinary network round-trip) leaves the DB
+        # connection idle in between — long enough over a remote/proxied
+        # Postgres connection that it can get dropped mid-import. Retry the
+        # whole project (idempotent: delete+recreate) on a stale connection.
+        for attempt in range(1, 4):
+            try:
+                connection.close()  # force a fresh connection for this project
 
-        # Clean re-run: drop existing media items for this project before
-        # re-importing, so removed/renamed files don't leave stale rows.
-        project.media_items.all().delete()
+                project, created = Project.objects.update_or_create(
+                    slug=slug,
+                    defaults={
+                        "title": title,
+                        "category": category,
+                        "status": Project.Status.PUBLISHED,
+                        "order": order,
+                    },
+                )
 
-        cover_bytes, cover_ext = prepare_upload(images[0])
-        project.cover_image.save(
-            f"{slug}-cover{cover_ext}",
-            ContentFile(cover_bytes, name=images[0].name),
-            save=True,
-        )
+                # Clean re-run: drop existing media items before re-importing,
+                # so removed/renamed files don't leave stale rows.
+                project.media_items.all().delete()
 
-        for i, image_path in enumerate(images):
-            data, ext = prepare_upload(image_path)
-            mi = MediaItem(
-                project=project,
-                type=MediaItem.Type.IMAGE,
-                order=i,
-                alt_text=f"{title} — image {i + 1}",
-            )
-            mi.file.save(
-                f"{slug}-img-{i + 1}{ext}",
-                ContentFile(data, name=image_path.name),
-                save=False,
-            )
-            mi.save()
-            total_media += 1
+                cover_bytes, cover_ext = prepare_upload(images[0])
+                project.cover_image.save(
+                    f"{slug}-cover{cover_ext}",
+                    ContentFile(cover_bytes, name=images[0].name),
+                    save=True,
+                )
 
-        total_projects += 1
-        verb = "Created" if created else "Updated"
-        print(f"    {verb}: {title} ({len(images)} images)")
+                media_count = 0
+                for i, image_path in enumerate(images):
+                    data, ext = prepare_upload(image_path)
+                    mi = MediaItem(
+                        project=project,
+                        type=MediaItem.Type.IMAGE,
+                        order=i,
+                        alt_text=f"{title} — image {i + 1}",
+                    )
+                    mi.file.save(
+                        f"{slug}-img-{i + 1}{ext}",
+                        ContentFile(data, name=image_path.name),
+                        save=False,
+                    )
+                    mi.save()
+                    media_count += 1
+
+                total_media += media_count
+                total_projects += 1
+                verb = "Created" if created else "Updated"
+                print(f"    {verb}: {title} ({media_count} images)")
+                break
+            except Exception as exc:
+                connection.close()
+                if attempt == 3:
+                    print(f"    (FAILED after 3 attempts) {title}: {exc}")
+                else:
+                    print(f"    (retry {attempt}/3) {title}: {exc}")
 
 print(f"Done. Projects touched: {total_projects} | MediaItems created: {total_media}")
