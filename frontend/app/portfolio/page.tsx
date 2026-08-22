@@ -1,44 +1,27 @@
 import Link from "next/link";
-import { getProjects } from "@/lib/api/projects";
+import { getProjects, getProjectBySlug } from "@/lib/api/projects";
 import { getCategories } from "@/lib/api/site";
-import CollageGrid from "@/components/CollageGrid";
-import CategoryFilter from "@/components/CategoryFilter";
-import TagFilterDropdown from "@/components/TagFilterDropdown";
-import type { Tag } from "@/lib/api/types";
+import PortfolioExplorer from "@/components/PortfolioExplorer";
+import type { MediaTile } from "@/components/PortfolioExplorer";
 
-export default async function PortfolioPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ category?: string; tag?: string }>;
-}) {
-  const { category, tag } = await searchParams;
+export default async function PortfolioPage() {
+  const [projects, categories] = await Promise.all([getProjects(), getCategories()]);
 
-  // Category filtering is done server-side via the DRF `?category=<slug>`
-  // query param (ProjectViewSet.get_queryset, Slice 2), not client-side.
-  // Tag filtering (subcategory dropdown, per-category) is applied
-  // client-side below since `ProjectListItem.tags` is already returned
-  // in full by the category-scoped fetch.
-  const [projects, categories] = await Promise.all([
-    getProjects({ category }),
-    getCategories(),
-  ]);
+  const details = await Promise.all(
+    projects.results.map((p) => getProjectBySlug(p.slug)),
+  );
 
-  const activeCategory = categories.find((c) => c.slug === category);
-  const heading = activeCategory?.name ?? "All Projects";
-
-  const availableTags: Tag[] = [];
-  const seenTagSlugs = new Set<string>();
-  for (const project of projects.results) {
-    const firstTag = project.tags[0];
-    if (firstTag && !seenTagSlugs.has(firstTag.slug)) {
-      seenTagSlugs.add(firstTag.slug);
-      availableTags.push(firstTag);
-    }
-  }
-
-  const visibleProjects = tag
-    ? projects.results.filter((p) => p.tags[0]?.slug === tag)
-    : projects.results;
+  const tiles: MediaTile[] = details.flatMap((project) =>
+    project.media_items
+      .filter((m) => m.type === "image")
+      .map((m) => ({
+        key: m.id,
+        imageUrl: m.file_url,
+        alt: m.alt_text || project.title,
+        category: project.category,
+        tags: project.tags,
+      })),
+  );
 
   return (
     <main className="min-h-screen bg-white px-6 py-16 text-black sm:px-10 sm:py-24">
@@ -52,14 +35,7 @@ export default async function PortfolioPage({
           </span>
           Back to work
         </Link>
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <h1 className="font-anton text-6xl leading-[0.9] md:text-8xl">{heading}</h1>
-          {category && availableTags.length > 0 ? (
-            <TagFilterDropdown categorySlug={category} tags={availableTags} activeTag={tag} />
-          ) : null}
-        </div>
-        <CategoryFilter categories={categories} activeSlug={category} />
-        <CollageGrid projects={visibleProjects} />
+        <PortfolioExplorer tiles={tiles} categories={categories} />
       </div>
     </main>
   );

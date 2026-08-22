@@ -2,16 +2,13 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 import MenuOverlay from "@/components/MenuOverlay";
 
 /**
  * The landing page ("/") and /contact ship their own header baked into the
- * page (black brutalist ContactSection + MenuOverlay), so the global
- * Nav/Footer would duplicate that chrome. Portfolio routes use the same
- * black/white brutalist system as the landing page, so they get a matching
- * light header instead of the cream-themed Nav used everywhere else.
+ * page (black brutalist ContactSection + MenuOverlay), so the global chrome
+ * would duplicate that. Portfolio routes get the black/white brutalist light
+ * header. Every other route (e.g. /about) ships with no header at all.
  */
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -32,11 +29,5 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
     );
   }
 
-  return (
-    <>
-      <Nav />
-      {children}
-      <Footer />
-    </>
-  );
+  return <>{children}</>;
 }

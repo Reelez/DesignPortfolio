@@ -46,7 +46,7 @@ export default async function Home() {
     <div className="bg-white text-black antialiased">
       {/* BEGIN: Hero Section */}
       <section className="relative flex min-h-screen flex-col border-b border-black md:flex-row">
-        <div className="relative w-full bg-black md:w-1/2">
+        <div className="relative order-2 w-full bg-black md:order-1 md:w-1/2">
           {heroImage ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -56,7 +56,7 @@ export default async function Home() {
             />
           ) : null}
         </div>
-        <div className="relative flex w-full flex-col justify-center bg-black p-8 text-white md:w-1/2 md:p-16">
+        <div className="relative order-1 flex w-full flex-col justify-center bg-black p-8 text-white md:order-2 md:w-1/2 md:p-16">
           <div className="absolute top-8 left-8 right-8 flex items-start justify-between">
             <h1 className="text-xl font-medium tracking-tight">Julian Jeffreys</h1>
             <MenuOverlay variant="dark" />
@@ -99,11 +99,11 @@ export default async function Home() {
           </div>
           <div className="pt-12">
             <p className="mb-12 border-b border-black pb-4 text-xs font-medium tracking-widest uppercase">
-              BASED IN NORTH CAROLINA — AVAILABLE WORLDWIDE
+              BASED IN NORTH CAROLINA, AVAILABLE WORLDWIDE
             </p>
             <div className="max-w-md space-y-6 text-sm leading-relaxed">
               <p>
-                I&apos;m Julian Jeffreys — a self-taught visual artist, designer, and
+                I&apos;m Julian Jeffreys, a self-taught visual artist, designer, and
                 muralist creating work that gives brands and spaces a distinct point of
                 view. For more than a decade, I&apos;ve worked across murals, fine art,
                 graphic design, and brand identity, approaching each project through a
@@ -111,10 +111,10 @@ export default async function Home() {
               </p>
               <p>
                 I&apos;m especially drawn to projects where the story is still being
-                written — new businesses, new spaces, and new identities. I work closely
+                written, new businesses, new spaces, and new identities. I work closely
                 with clients to understand not just what they want something to look
                 like, but how they want it to feel. From there, I build a visual
-                language around that feeling — sometimes expanding on existing story,
+                language around that feeling, sometimes expanding on existing story,
                 and sometimes creating one entirely from scratch.
               </p>
               <a
@@ -237,7 +237,7 @@ export default async function Home() {
                 WITH MY ARTWORK.
               </h2>
               <p className="mb-8 max-w-sm text-sm">
-                From murals that transform spaces to visuals that bring brands to life —
+                From murals that transform spaces to visuals that bring brands to life,
                 I create custom artwork and design that tell your story, set you apart,
                 and leave a lasting impression.
               </p>

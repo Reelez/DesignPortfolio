@@ -1,4 +1,5 @@
 import { getSiteSettings } from "@/lib/api/site";
+import MenuOverlay from "@/components/MenuOverlay";
 
 export default async function AboutPage() {
   const site = await getSiteSettings();
@@ -10,53 +11,57 @@ export default async function AboutPage() {
   ].filter((link) => link.url);
 
   return (
-    <main className="mx-auto flex max-w-4xl flex-1 flex-col gap-10 px-6 py-16 sm:px-10 sm:py-24">
-      <div className="flex flex-col gap-2">
-        <p className="tracking-label text-xs text-accent">About</p>
-        <h1 className="font-display text-4xl">A little context</h1>
+    <div className="relative min-h-screen bg-white text-black">
+      <div className="absolute top-8 left-8 right-8 z-10 flex items-start justify-between">
+        <h1 className="font-anton text-xl">Julian Jeffreys</h1>
+        <MenuOverlay variant="light" />
       </div>
 
-      <div className="flex flex-col gap-10 sm:flex-row sm:items-start">
-        {site.profile_photo ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={site.profile_photo}
-            alt="Profile photo"
-            className="h-40 w-40 flex-shrink-0 rounded-full bg-line object-cover"
-          />
-        ) : null}
-        <div className="flex flex-col gap-6">
-          {site.bio ? (
-            <p className="max-w-xl whitespace-pre-line text-lg leading-relaxed">{site.bio}</p>
+      <main className="mx-auto flex max-w-4xl flex-col gap-10 px-6 pt-32 pb-24 sm:px-10 sm:pt-40">
+        <h2 className="font-anton text-5xl leading-[0.9] md:text-7xl">ABOUT</h2>
+
+        <div className="flex flex-col gap-10 border-t border-black pt-10 sm:flex-row sm:items-start">
+          {site.profile_photo ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={site.profile_photo}
+              alt="Profile photo"
+              className="h-40 w-40 flex-shrink-0 object-cover"
+            />
           ) : null}
-          {socialLinks.length > 0 || site.contact_email ? (
-            <ul className="flex flex-wrap gap-6 border-t border-line pt-6">
-              {socialLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="tracking-label text-xs text-muted hover:text-accent"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-              {site.contact_email ? (
-                <li>
-                  <a
-                    href={`mailto:${site.contact_email}`}
-                    className="tracking-label text-xs text-muted hover:text-accent"
-                  >
-                    {site.contact_email}
-                  </a>
-                </li>
-              ) : null}
-            </ul>
-          ) : null}
+          <div className="flex flex-col gap-6">
+            {site.bio ? (
+              <p className="max-w-xl whitespace-pre-line text-sm leading-relaxed">{site.bio}</p>
+            ) : null}
+            {socialLinks.length > 0 || site.contact_email ? (
+              <ul className="flex flex-wrap gap-6 border-t border-black pt-6">
+                {socialLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="text-xs font-medium tracking-widest uppercase transition-opacity hover:opacity-70"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+                {site.contact_email ? (
+                  <li>
+                    <a
+                      href={`mailto:${site.contact_email}`}
+                      className="text-xs font-medium tracking-widest uppercase transition-opacity hover:opacity-70"
+                    >
+                      {site.contact_email}
+                    </a>
+                  </li>
+                ) : null}
+              </ul>
+            ) : null}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
