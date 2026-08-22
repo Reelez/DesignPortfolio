@@ -1,4 +1,5 @@
 import { getSiteSettings } from "@/lib/api/site";
+import { cloudinaryOptimize } from "@/lib/cloudinary";
 import MenuOverlay from "@/components/MenuOverlay";
 
 export default async function AboutPage() {
@@ -24,9 +25,11 @@ export default async function AboutPage() {
           {site.profile_photo ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={site.profile_photo}
+              src={cloudinaryOptimize(site.profile_photo, 320)}
               alt="Profile photo"
-              className="h-40 w-40 flex-shrink-0 object-cover"
+              className="img-loading h-40 w-40 flex-shrink-0 object-cover"
+              loading="lazy"
+              decoding="async"
             />
           ) : null}
           <div className="flex flex-col gap-6">

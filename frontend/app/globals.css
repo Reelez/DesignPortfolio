@@ -47,3 +47,23 @@ h1, h2, h3, .font-display {
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.img-loading {
+  background-image: linear-gradient(
+    100deg,
+    #ececec 30%,
+    #f7f7f7 45%,
+    #ececec 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}

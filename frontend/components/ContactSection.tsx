@@ -1,3 +1,5 @@
+import { cloudinaryOptimize } from "@/lib/cloudinary";
+
 /**
  * The black "let's create something iconic" CTA/contact block — used as the
  * final section of the landing page and, standalone, as the /contact page.
@@ -83,8 +85,10 @@ export default function ContactSection({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt="Illustrated artwork of a table with coffee pot and flowers"
-              className="h-auto w-full max-w-lg border-4 border-[#F0C987] shadow-2xl mix-blend-multiply"
-              src={footerImage}
+              className="img-loading h-auto w-full max-w-lg border-4 border-[#F0C987] shadow-2xl mix-blend-multiply"
+              src={cloudinaryOptimize(footerImage, 700)}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ) : (

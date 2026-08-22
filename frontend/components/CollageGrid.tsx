@@ -1,4 +1,5 @@
 import type { MediaTile } from "@/components/PortfolioExplorer";
+import { cloudinaryOptimize } from "@/lib/cloudinary";
 
 /**
  * CSS multi-column masonry: each image keeps its natural aspect ratio and
@@ -16,10 +17,11 @@ export default function CollageGrid({ tiles }: { tiles: MediaTile[] }) {
         // eslint-disable-next-line @next/next/no-img-element
         <img
           key={tile.key}
-          src={tile.imageUrl}
+          src={cloudinaryOptimize(tile.imageUrl, 600)}
           alt={tile.alt}
           loading="lazy"
-          className="block w-full break-inside-avoid object-cover"
+          decoding="async"
+          className="img-loading block min-h-[140px] w-full break-inside-avoid object-cover"
         />
       ))}
     </div>

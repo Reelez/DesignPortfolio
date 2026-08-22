@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getProjects } from "@/lib/api/projects";
 import { getSiteSettings } from "@/lib/api/site";
+import { cloudinaryOptimize } from "@/lib/cloudinary";
 import ContactSection from "@/components/ContactSection";
 import MenuOverlay from "@/components/MenuOverlay";
 
@@ -51,8 +52,10 @@ export default async function Home() {
             // eslint-disable-next-line @next/next/no-img-element
             <img
               alt="Japanese style mural in dark interior"
-              className="h-full w-full object-cover"
-              src={heroImage}
+              className="img-loading h-full w-full object-cover"
+              src={cloudinaryOptimize(heroImage, 1200)}
+              fetchPriority="high"
+              decoding="async"
             />
           ) : null}
         </div>
@@ -147,8 +150,10 @@ export default async function Home() {
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       alt={murals[i].title}
-                      className="h-full w-full object-cover"
-                      src={murals[i].cover_image}
+                      className="img-loading h-full w-full object-cover"
+                      src={cloudinaryOptimize(murals[i].cover_image!, 500)}
+                      loading="lazy"
+                      decoding="async"
                     />
                   ) : null}
                 </div>
@@ -177,8 +182,10 @@ export default async function Home() {
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     alt={fineArt[i].title}
-                    className="h-full w-full object-cover"
-                    src={fineArt[i].cover_image}
+                    className="img-loading h-full w-full object-cover"
+                    src={cloudinaryOptimize(fineArt[i].cover_image!, 500)}
+                    loading="lazy"
+                    decoding="async"
                   />
                 ) : null}
               </div>
@@ -209,8 +216,10 @@ export default async function Home() {
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     alt={graphicDesign[i].title}
-                    className="h-full max-w-full object-contain"
-                    src={graphicDesign[i].cover_image}
+                    className="img-loading h-full max-w-full object-contain"
+                    src={cloudinaryOptimize(graphicDesign[i].cover_image!, 500)}
+                    loading="lazy"
+                    decoding="async"
                   />
                 ) : null}
               </div>
@@ -253,8 +262,10 @@ export default async function Home() {
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   alt="Artist workspace with various prints and tools"
-                  className="h-auto w-full shadow-xl"
-                  src={buildBrandImage}
+                  className="img-loading h-auto w-full shadow-xl"
+                  src={cloudinaryOptimize(buildBrandImage, 800)}
+                  loading="lazy"
+                  decoding="async"
                 />
               ) : null}
             </div>
