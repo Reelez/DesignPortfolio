@@ -7,16 +7,16 @@ import Footer from "@/components/Footer";
 import MenuOverlay from "@/components/MenuOverlay";
 
 /**
- * The landing page ("/") ships its own header and contact form baked into
- * its sections, so the global Nav/Footer would duplicate that chrome.
- * Portfolio routes use the same black/white brutalist system as the
- * landing page, so they get a matching light header instead of the
- * cream-themed Nav used everywhere else.
+ * The landing page ("/") and /contact ship their own header baked into the
+ * page (black brutalist ContactSection + MenuOverlay), so the global
+ * Nav/Footer would duplicate that chrome. Portfolio routes use the same
+ * black/white brutalist system as the landing page, so they get a matching
+ * light header instead of the cream-themed Nav used everywhere else.
  */
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  if (pathname === "/") return <>{children}</>;
+  if (pathname === "/" || pathname === "/contact") return <>{children}</>;
 
   if (pathname.startsWith("/portfolio")) {
     return (

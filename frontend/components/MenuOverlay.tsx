@@ -67,7 +67,7 @@ export default function MenuOverlay({ variant = "dark" }: { variant?: "dark" | "
           </button>
         </div>
 
-        <nav className="font-anton flex flex-col gap-4 text-5xl leading-[0.9] uppercase md:text-8xl">
+        <nav className="font-anton flex flex-col items-end gap-4 text-right text-5xl leading-[0.9] uppercase md:text-8xl">
           {LINKS.map((link) => (
             <Link
               key={link.href}
