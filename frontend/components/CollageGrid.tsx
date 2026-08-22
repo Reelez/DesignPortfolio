@@ -75,6 +75,18 @@ function renderTileCluster(projects: ProjectListItem[], keyPrefix: string): Reac
     );
   }
 
+  if (projects.length === 4) {
+    const [a, b, c, d] = projects;
+    return (
+      <div key={keyPrefix} className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <Tile project={a} className="aspect-square" />
+        <Tile project={b} className="aspect-square" />
+        <Tile project={c} className="aspect-square" />
+        <Tile project={d} className="aspect-square" />
+      </div>
+    );
+  }
+
   const chunk = projects.slice(0, 5);
   const rest = projects.slice(5);
   const [a, b, c, d, e] = chunk;
