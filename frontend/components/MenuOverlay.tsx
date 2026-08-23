@@ -55,7 +55,8 @@ export default function MenuOverlay({ variant = "dark" }: { variant?: "dark" | "
         aria-hidden={!open}
       >
         <div className="flex items-start justify-between">
-          <span className="text-xl font-medium tracking-tight">Julian Jeffreys</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/signature-white.png" alt="Julian Jeffreys" className="h-6 w-auto" />
           <button
             type="button"
             onClick={() => setOpen(false)}

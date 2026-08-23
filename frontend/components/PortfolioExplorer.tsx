@@ -10,6 +10,8 @@ export interface MediaTile {
   alt: string;
   category: Category | null;
   tags: Tag[];
+  projectSlug: string;
+  projectTitle: string;
 }
 
 // Fixed display order for category pills; unlisted slugs fall back to the
@@ -70,6 +72,22 @@ export default function PortfolioExplorer({
   const activeCategoryName =
     orderedCategories.find((c) => c.slug === activeCategory)?.name ?? "All Work";
   const activeTagLabel = availableTags.find((t) => t.slug === activeTag)?.name ?? "All";
+
+  const projectGroups = useMemo(() => {
+    if (!activeCategory) return [];
+    const order: string[] = [];
+    const bySlug = new Map<string, { title: string; tiles: MediaTile[] }>();
+    for (const tile of visibleTiles) {
+      const group = bySlug.get(tile.projectSlug);
+      if (group) {
+        group.tiles.push(tile);
+      } else {
+        bySlug.set(tile.projectSlug, { title: tile.projectTitle, tiles: [tile] });
+        order.push(tile.projectSlug);
+      }
+    }
+    return order.map((slug) => bySlug.get(slug)!);
+  }, [visibleTiles, activeCategory]);
 
   return (
     <div className="flex flex-col gap-8">
@@ -164,7 +182,20 @@ export default function PortfolioExplorer({
         ) : null}
       </div>
 
-      <CollageGrid tiles={visibleTiles} />
+      {activeCategory ? (
+        <div className="flex flex-col gap-16">
+          {projectGroups.map((group) => (
+            <div key={group.title} className="border-t border-black pt-6">
+              <h2 className="font-anton mb-4 text-3xl leading-none md:text-5xl">
+                {group.title}
+              </h2>
+              <CollageGrid tiles={group.tiles} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <CollageGrid tiles={visibleTiles} />
+      )}
     </div>
   );
 }

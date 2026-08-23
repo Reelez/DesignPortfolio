@@ -46,8 +46,8 @@ export default async function Home() {
   return (
     <div className="bg-white text-black antialiased">
       {/* BEGIN: Hero Section */}
-      <section className="relative flex min-h-screen flex-col border-b border-black md:flex-row">
-        <div className="relative order-2 w-full bg-black md:order-1 md:w-1/2">
+      <section className="relative flex h-screen flex-col md:flex-row">
+        <div className="relative order-2 w-full flex-1 bg-black md:order-1 md:w-1/2 md:flex-none">
           {heroImage ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -59,13 +59,14 @@ export default async function Home() {
             />
           ) : null}
         </div>
-        <div className="relative order-1 flex w-full flex-col justify-center bg-black p-8 text-white md:order-2 md:w-1/2 md:p-16">
-          <div className="absolute top-8 left-8 right-8 flex items-start justify-between">
-            <h1 className="text-xl font-medium tracking-tight">Julian Jeffreys</h1>
+        <div className="relative order-1 flex w-full flex-col justify-center bg-black p-6 text-white md:order-2 md:w-1/2 md:p-16">
+          <div className="absolute top-6 left-6 right-6 flex items-start justify-between md:top-8 md:left-8 md:right-8">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/signature-white.png" alt="Julian Jeffreys" className="h-5 w-auto md:h-6" />
             <MenuOverlay variant="dark" />
           </div>
-          <div className="mt-20 text-right md:mt-0">
-            <h2 className="font-anton flex flex-col gap-2 text-5xl leading-none md:text-7xl lg:text-8xl">
+          <div className="mt-14 text-right md:mt-0">
+            <h2 className="font-anton flex flex-col gap-1 text-3xl leading-none sm:text-4xl md:gap-2 md:text-7xl lg:text-8xl">
               <span>MURALS</span>
               <span>FINE ART</span>
               <span>WEB DESIGN</span>
@@ -74,7 +75,7 @@ export default async function Home() {
             </h2>
             <a
               href="#work"
-              className="mt-16 inline-block border border-white px-8 py-3 text-sm tracking-widest transition-colors hover:bg-white hover:text-black"
+              className="mt-6 inline-block border border-white px-8 py-3 text-sm tracking-widest transition-colors hover:bg-white hover:text-black md:mt-16"
             >
               VIEW WORK →
             </a>
@@ -124,7 +125,7 @@ export default async function Home() {
                 href="#work"
                 className="mt-8 inline-block border-b border-black pb-1 text-xs font-medium tracking-widest uppercase transition-opacity hover:opacity-70"
               >
-                VIEW SELECTED WORK →
+                VIEW WORK →
               </a>
             </div>
           </div>
@@ -135,17 +136,17 @@ export default async function Home() {
       {/* BEGIN: Murals Section */}
       <section id="work" className="relative bg-black text-white">
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
-          <h2 className="font-anton mb-8 border-b border-white pb-4 text-6xl md:text-8xl">
-            MURALS
-          </h2>
+          <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
+            <h2 className="font-anton text-6xl md:text-8xl">MURALS</h2>
+            <p className="max-w-md text-sm text-gray-400 md:mb-2">
+              Large-scale works that transform walls into immersive brand and community
+              experiences.
+            </p>
+          </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[
-              "Large-scale artwork that transforms spaces and creates unforgettable experiences.",
-              "Custom murals that bring brands, communities, and spaces to life.",
-              "Bold designs that amplify spaces and leave a lasting impression.",
-            ].map((caption, i) => (
-              <div key={caption}>
-                <div className="mb-4 aspect-square overflow-hidden bg-gray-900">
+            {[0, 1, 2].map((i) => (
+              <div key={i}>
+                <div className="aspect-square overflow-hidden bg-gray-900">
                   {murals[i]?.cover_image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
@@ -157,14 +158,10 @@ export default async function Home() {
                     />
                   ) : null}
                 </div>
-                <div className="flex gap-4">
-                  <span className="text-xs">→</span>
-                  <p className="text-xs text-gray-400">{caption}</p>
-                </div>
+                {i === 0 ? <ViewMoreButton category="murals" variant="dark" /> : null}
               </div>
             ))}
           </div>
-          <ViewMoreButton category="murals" variant="dark" />
         </div>
       </section>
       {/* END: Murals Section */}
@@ -172,26 +169,31 @@ export default async function Home() {
       {/* BEGIN: Fine Art Section */}
       <section className="relative border-b border-black bg-white text-black">
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
-          <h2 className="font-anton mb-8 border-b border-black pb-4 text-6xl md:text-8xl">
-            FINE ART
-          </h2>
+          <div className="mb-8 flex flex-col gap-4 border-b border-black pb-4 md:flex-row md:items-end md:gap-6">
+            <h2 className="font-anton text-6xl md:text-8xl">FINE ART</h2>
+            <p className="max-w-md text-sm text-gray-500 md:mb-2">
+              Original pieces exploring color, texture, and emotion across mixed media.
+            </p>
+          </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[0, 1, 2].map((i) => (
-              <div key={i} className="aspect-[4/5] overflow-hidden bg-gray-100">
-                {fineArt[i]?.cover_image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    alt={fineArt[i].title}
-                    className="img-loading h-full w-full object-cover"
-                    src={cloudinaryOptimize(fineArt[i].cover_image!, 500)}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : null}
+              <div key={i}>
+                <div className="aspect-[4/5] overflow-hidden bg-gray-100">
+                  {fineArt[i]?.cover_image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      alt={fineArt[i].title}
+                      className="img-loading h-full w-full object-cover"
+                      src={cloudinaryOptimize(fineArt[i].cover_image!, 500)}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : null}
+                </div>
+                {i === 0 ? <ViewMoreButton category="fine-art" variant="light" /> : null}
               </div>
             ))}
           </div>
-          <ViewMoreButton category="fine-art" variant="light" />
         </div>
       </section>
       {/* END: Fine Art Section */}
@@ -199,33 +201,37 @@ export default async function Home() {
       {/* BEGIN: Graphic Design Section */}
       <section className="relative border-b border-white bg-black text-white">
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
-          <h2 className="font-anton mb-8 border-b border-white pb-4 text-6xl md:text-8xl">
-            GRAPHIC DESIGN
-          </h2>
+          <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
+            <h2 className="font-anton text-6xl md:text-8xl">GRAPHIC DESIGN</h2>
+            <p className="max-w-md text-sm text-gray-400 md:mb-2">
+              Visual systems and print work built to communicate with clarity and edge.
+            </p>
+          </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               { bg: "bg-gray-900", pad: "p-8" },
               { bg: "bg-[#F7F4EB]", pad: "" },
               { bg: "bg-[#EAE6D9]", pad: "p-8" },
             ].map((slot, i) => (
-              <div
-                key={i}
-                className={`aspect-[4/5] overflow-hidden ${slot.bg} flex items-center justify-center ${slot.pad}`}
-              >
-                {graphicDesign[i]?.cover_image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    alt={graphicDesign[i].title}
-                    className="img-loading h-full max-w-full object-contain"
-                    src={cloudinaryOptimize(graphicDesign[i].cover_image!, 500)}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : null}
+              <div key={i}>
+                <div
+                  className={`aspect-[4/5] overflow-hidden ${slot.bg} flex items-center justify-center ${slot.pad}`}
+                >
+                  {graphicDesign[i]?.cover_image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      alt={graphicDesign[i].title}
+                      className="img-loading h-full max-w-full object-contain"
+                      src={cloudinaryOptimize(graphicDesign[i].cover_image!, 500)}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : null}
+                </div>
+                {i === 0 ? <ViewMoreButton category="graphic-design" variant="dark" /> : null}
               </div>
             ))}
           </div>
-          <ViewMoreButton category="graphic-design" variant="dark" />
         </div>
       </section>
       {/* END: Graphic Design Section */}

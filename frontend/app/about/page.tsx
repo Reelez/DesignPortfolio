@@ -14,7 +14,8 @@ export default async function AboutPage() {
   return (
     <div className="relative min-h-screen bg-white text-black">
       <div className="absolute top-8 left-8 right-8 z-10 flex items-start justify-between">
-        <h1 className="font-anton text-xl">Julian Jeffreys</h1>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/signature-black.png" alt="Julian Jeffreys" className="h-6 w-auto" />
         <MenuOverlay variant="light" />
       </div>
 

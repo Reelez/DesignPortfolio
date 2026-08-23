@@ -12,7 +12,7 @@ export default function CollageGrid({ tiles }: { tiles: MediaTile[] }) {
   }
 
   return (
-    <div className="columns-2 gap-0 sm:columns-3 lg:columns-4">
+    <div className="columns-2 gap-[5px] sm:columns-3 lg:columns-4">
       {tiles.map((tile) => (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -21,7 +21,7 @@ export default function CollageGrid({ tiles }: { tiles: MediaTile[] }) {
           alt={tile.alt}
           loading="lazy"
           decoding="async"
-          className="img-loading block min-h-[140px] w-full break-inside-avoid object-cover"
+          className="img-loading mb-[5px] block min-h-[140px] w-full break-inside-avoid object-cover"
         />
       ))}
     </div>

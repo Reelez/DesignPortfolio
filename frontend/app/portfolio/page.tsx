@@ -20,6 +20,8 @@ export default async function PortfolioPage() {
         alt: m.alt_text || project.title,
         category: project.category,
         tags: project.tags,
+        projectSlug: project.slug,
+        projectTitle: project.title,
       })),
   );
 
