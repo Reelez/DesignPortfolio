@@ -35,11 +35,35 @@ export default async function Home() {
   const murals = bySlug("murals");
   const fineArt = bySlug("fine-art");
   const graphicDesign = bySlug("graphic-design");
+  const webDesign = bySlug("web-design");
+  const productDesign = bySlug("product-design");
   const brand = bySlug("brand-design");
 
-  const heroImage = murals[0]?.cover_image ?? projects[0]?.cover_image ?? null;
   const buildBrandImage = brand[0]?.cover_image ?? projects[0]?.cover_image ?? null;
-  const footerImage = brand[1]?.cover_image ?? fineArt[0]?.cover_image ?? null;
+
+  // Static local images for the landing-page section previews (see
+  // /public/homepage). Web Design has no local folder yet, so it keeps
+  // pulling its cover image from the CMS.
+  const muralHomepageImages = [
+    "/homepage/murals/dear-dads-mural.png",
+    "/homepage/murals/japanese-restaurant-2.png",
+    "/homepage/murals/mural-3.png",
+  ];
+  const fineArtHomepageImages = [
+    "/homepage/fine-art/fine-art-1.png",
+    "/homepage/fine-art/fine-art-2.png",
+    "/homepage/fine-art/fine-art-3.png",
+  ];
+  const graphicDesignHomepageImages = [
+    "/homepage/graphic-design/graphic-design-home-page.png",
+    "/homepage/graphic-design/holina-home-page.png",
+    "/homepage/graphic-design/oasis-home-page.png",
+  ];
+  const productDesignHomepageImages = [
+    "/homepage/product-design/product-design-home-page.png",
+    "/homepage/product-design/product-design-home-page-2.png",
+    "/homepage/product-design/product-design-home-page-3.png",
+  ];
 
   const contactEmail = site.contact_email || "HELLO@JULIANJEFFREYS.COM";
 
@@ -48,16 +72,14 @@ export default async function Home() {
       {/* BEGIN: Hero Section */}
       <section className="relative flex h-screen flex-col md:flex-row">
         <div className="relative order-2 w-full flex-1 bg-black md:order-1 md:w-1/2 md:flex-none">
-          {heroImage ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              alt="Japanese style mural in dark interior"
-              className="img-loading h-full w-full object-cover"
-              src={cloudinaryOptimize(heroImage, 1200)}
-              fetchPriority="high"
-              decoding="async"
-            />
-          ) : null}
+          <video
+            className="h-full w-full object-cover"
+            src="/homepage/mural-hero.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
         </div>
         <div className="relative order-1 flex w-full flex-col justify-center bg-black p-6 text-white md:order-2 md:w-1/2 md:p-16">
           <div className="absolute top-6 left-6 right-6 flex items-start justify-between md:top-8 md:left-8 md:right-8">
@@ -147,12 +169,12 @@ export default async function Home() {
             {[0, 1, 2].map((i) => (
               <div key={i}>
                 <div className="aspect-square overflow-hidden bg-gray-900">
-                  {murals[i]?.cover_image ? (
+                  {muralHomepageImages[i] ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
-                      alt={murals[i].title}
-                      className="img-loading h-full w-full object-cover"
-                      src={cloudinaryOptimize(murals[i].cover_image!, 500)}
+                      alt={murals[i]?.title ?? "Mural artwork"}
+                      className="h-full w-full object-cover"
+                      src={muralHomepageImages[i]}
                       loading="lazy"
                       decoding="async"
                     />
@@ -179,12 +201,12 @@ export default async function Home() {
             {[0, 1, 2].map((i) => (
               <div key={i}>
                 <div className="aspect-[4/5] overflow-hidden bg-gray-100">
-                  {fineArt[i]?.cover_image ? (
+                  {fineArtHomepageImages[i] ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
-                      alt={fineArt[i].title}
-                      className="img-loading h-full w-full object-cover"
-                      src={cloudinaryOptimize(fineArt[i].cover_image!, 500)}
+                      alt={fineArt[i]?.title ?? "Fine art piece"}
+                      className="h-full w-full object-cover"
+                      src={fineArtHomepageImages[i]}
                       loading="lazy"
                       decoding="async"
                     />
@@ -208,21 +230,15 @@ export default async function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[
-              { bg: "bg-gray-900", pad: "p-8" },
-              { bg: "bg-[#F7F4EB]", pad: "" },
-              { bg: "bg-[#EAE6D9]", pad: "p-8" },
-            ].map((slot, i) => (
+            {[0, 1, 2].map((i) => (
               <div key={i}>
-                <div
-                  className={`aspect-[4/5] overflow-hidden ${slot.bg} flex items-center justify-center ${slot.pad}`}
-                >
-                  {graphicDesign[i]?.cover_image ? (
+                <div className="aspect-[4/5] overflow-hidden bg-gray-900">
+                  {graphicDesignHomepageImages[i] ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
-                      alt={graphicDesign[i].title}
-                      className="img-loading h-full max-w-full object-contain"
-                      src={cloudinaryOptimize(graphicDesign[i].cover_image!, 500)}
+                      alt={graphicDesign[i]?.title ?? "Graphic design work"}
+                      className="h-full w-full object-cover"
+                      src={graphicDesignHomepageImages[i]}
                       loading="lazy"
                       decoding="async"
                     />
@@ -235,6 +251,72 @@ export default async function Home() {
         </div>
       </section>
       {/* END: Graphic Design Section */}
+
+      {/* BEGIN: Web Design Section */}
+      <section className="relative border-b border-black bg-white text-black">
+        <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
+          <div className="mb-8 flex flex-col gap-4 border-b border-black pb-4 md:flex-row md:items-end md:gap-6">
+            <h2 className="font-anton text-6xl md:text-8xl">WEB DESIGN</h2>
+            <p className="max-w-md text-sm text-gray-500 md:mb-2">
+              Digital experiences designed with the same eye for craft and
+              storytelling as the physical work.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {[0, 1, 2].map((i) => (
+              <div key={i}>
+                <div className="aspect-[4/5] overflow-hidden bg-gray-100">
+                  {webDesign[i]?.cover_image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      alt={webDesign[i].title}
+                      className="img-loading h-full w-full object-cover"
+                      src={cloudinaryOptimize(webDesign[i].cover_image!, 500)}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : null}
+                </div>
+                {i === 0 ? <ViewMoreButton category="web-design" variant="light" /> : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* END: Web Design Section */}
+
+      {/* BEGIN: Product Design Section */}
+      <section className="relative border-b border-white bg-black text-white">
+        <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
+          <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
+            <h2 className="font-anton text-6xl md:text-8xl">PRODUCT DESIGN</h2>
+            <p className="max-w-md text-sm text-gray-400 md:mb-2">
+              Physical and packaged goods designed with the same attention to
+              form and detail.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {[0, 1, 2].map((i) => (
+              <div key={i}>
+                <div className="aspect-[4/5] overflow-hidden bg-gray-900">
+                  {productDesignHomepageImages[i] ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      alt={productDesign[i]?.title ?? "Product design work"}
+                      className="h-full w-full object-cover"
+                      src={productDesignHomepageImages[i]}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : null}
+                </div>
+                {i === 0 ? <ViewMoreButton category="product-design" variant="dark" /> : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* END: Product Design Section */}
 
       {/* BEGIN: Build Your Brand Section */}
       <section className="relative border-b border-black bg-[#F9F9F9] text-black">
@@ -357,7 +439,7 @@ export default async function Home() {
       {/* END: Build Your Brand Section */}
 
       {/* BEGIN: Footer Contact Section */}
-      <ContactSection contactEmail={contactEmail} footerImage={footerImage} />
+      <ContactSection contactEmail={contactEmail} footerVideo="/homepage/mural-hero.mp4" />
       {/* END: Footer Contact Section */}
     </div>
   );

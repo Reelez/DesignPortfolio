@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { getProjects, getProjectBySlug } from "@/lib/api/projects";
 import { getCategories } from "@/lib/api/site";
 import PortfolioExplorer from "@/components/PortfolioExplorer";
@@ -37,7 +38,9 @@ export default async function PortfolioPage() {
           </span>
           Back to work
         </Link>
-        <PortfolioExplorer tiles={tiles} categories={categories} />
+        <Suspense fallback={null}>
+          <PortfolioExplorer tiles={tiles} categories={categories} />
+        </Suspense>
       </div>
     </main>
   );

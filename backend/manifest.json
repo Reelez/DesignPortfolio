@@ -1,0 +1,766 @@
+{
+  "categories": [
+    {
+      "name": "Product Design",
+      "slug": "product-design",
+      "projects": [
+        {
+          "title": "B&B",
+          "slug": "product-design-bb",
+          "order": 0,
+          "cover_image": "covers/product-design-bb-cover_dqrgix",
+          "media": [
+            {
+              "name": "media_items/product-design-bb-img-1_mrdwar",
+              "alt_text": "B&B \u2014 image 1"
+            },
+            {
+              "name": "media_items/product-design-bb-img-2_zzzi2c",
+              "alt_text": "B&B \u2014 image 2"
+            },
+            {
+              "name": "media_items/product-design-bb-img-3_mqsiyp",
+              "alt_text": "B&B \u2014 image 3"
+            },
+            {
+              "name": "media_items/product-design-bb-img-4_kxxkub",
+              "alt_text": "B&B \u2014 image 4"
+            }
+          ]
+        },
+        {
+          "title": "DEARDADS",
+          "slug": "product-design-deardads",
+          "order": 1,
+          "cover_image": "covers/product-design-deardads-cover_orb4bm",
+          "media": [
+            {
+              "name": "media_items/product-design-deardads-img-1_cmbxln",
+              "alt_text": "DEARDADS \u2014 image 1"
+            },
+            {
+              "name": "media_items/product-design-deardads-img-2_nfrsz1",
+              "alt_text": "DEARDADS \u2014 image 2"
+            }
+          ]
+        },
+        {
+          "title": "NIMBUS",
+          "slug": "product-design-nimbus",
+          "order": 2,
+          "cover_image": "covers/product-design-nimbus-cover_tflknd",
+          "media": [
+            {
+              "name": "media_items/product-design-nimbus-img-1_szjuta",
+              "alt_text": "NIMBUS \u2014 image 1"
+            },
+            {
+              "name": "media_items/product-design-nimbus-img-2_rsg4au",
+              "alt_text": "NIMBUS \u2014 image 2"
+            },
+            {
+              "name": "media_items/product-design-nimbus-img-3_wa8oxx",
+              "alt_text": "NIMBUS \u2014 image 3"
+            }
+          ]
+        },
+        {
+          "title": "OASIS",
+          "slug": "product-design-oasis",
+          "order": 3,
+          "cover_image": "covers/product-design-oasis-cover_kusilr",
+          "media": [
+            {
+              "name": "media_items/product-design-oasis-img-1_lk6idn",
+              "alt_text": "OASIS \u2014 image 1"
+            },
+            {
+              "name": "media_items/product-design-oasis-img-2_bf7qos",
+              "alt_text": "OASIS \u2014 image 2"
+            },
+            {
+              "name": "media_items/product-design-oasis-img-3_mjqshn",
+              "alt_text": "OASIS \u2014 image 3"
+            },
+            {
+              "name": "media_items/product-design-oasis-img-4_krbdec",
+              "alt_text": "OASIS \u2014 image 4"
+            }
+          ]
+        },
+        {
+          "title": "VEGI",
+          "slug": "product-design-vegi",
+          "order": 4,
+          "cover_image": "covers/product-design-vegi-cover_nlhjgl",
+          "media": [
+            {
+              "name": "media_items/product-design-vegi-img-1_huqwmb",
+              "alt_text": "VEGI \u2014 image 1"
+            },
+            {
+              "name": "media_items/product-design-vegi-img-2_ws8af7",
+              "alt_text": "VEGI \u2014 image 2"
+            },
+            {
+              "name": "media_items/product-design-vegi-img-3_kij75c",
+              "alt_text": "VEGI \u2014 image 3"
+            },
+            {
+              "name": "media_items/product-design-vegi-img-4_nvpcf6",
+              "alt_text": "VEGI \u2014 image 4"
+            },
+            {
+              "name": "media_items/product-design-vegi-img-5_wjnla7",
+              "alt_text": "VEGI \u2014 image 5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Murals",
+      "slug": "murals",
+      "projects": [
+        {
+          "title": "DearDads",
+          "slug": "murals-deardads",
+          "order": 0,
+          "cover_image": "covers/murals-deardads-cover_v8v8oj",
+          "media": [
+            {
+              "name": "media_items/murals-deardads-img-1_w7uujr",
+              "alt_text": "DearDads \u2014 image 1"
+            },
+            {
+              "name": "media_items/murals-deardads-img-2_hjmfeo",
+              "alt_text": "DearDads \u2014 image 2"
+            },
+            {
+              "name": "media_items/murals-deardads-img-3_dfgnac",
+              "alt_text": "DearDads \u2014 image 3"
+            },
+            {
+              "name": "media_items/murals-deardads-img-4_ggkci9",
+              "alt_text": "DearDads \u2014 image 4"
+            },
+            {
+              "name": "media_items/murals-deardads-img-5_kkemwp",
+              "alt_text": "DearDads \u2014 image 5"
+            },
+            {
+              "name": "media_items/murals-deardads-img-6_pkiryc",
+              "alt_text": "DearDads \u2014 image 6"
+            },
+            {
+              "name": "media_items/murals-deardads-img-7_b0zc7r",
+              "alt_text": "DearDads \u2014 image 7"
+            },
+            {
+              "name": "media_items/murals-deardads-img-8_fumdxc",
+              "alt_text": "DearDads \u2014 image 8"
+            },
+            {
+              "name": "media_items/murals-deardads-img-9_lz97mw",
+              "alt_text": "DearDads \u2014 image 9"
+            },
+            {
+              "name": "media_items/murals-deardads-img-10_xetjy6",
+              "alt_text": "DearDads \u2014 image 10"
+            },
+            {
+              "name": "media_items/murals-deardads-img-11_yhaxb4",
+              "alt_text": "DearDads \u2014 image 11"
+            },
+            {
+              "name": "media_items/murals-deardads-img-12_dwrm8c",
+              "alt_text": "DearDads \u2014 image 12"
+            },
+            {
+              "name": "media_items/murals-deardads-img-13_nf0phw",
+              "alt_text": "DearDads \u2014 image 13"
+            },
+            {
+              "name": "media_items/murals-deardads-img-14_mmli0e",
+              "alt_text": "DearDads \u2014 image 14"
+            },
+            {
+              "name": "media_items/murals-deardads-img-15_gelb6o",
+              "alt_text": "DearDads \u2014 image 15"
+            },
+            {
+              "name": "media_items/murals-deardads-img-16_b40o6h",
+              "alt_text": "DearDads \u2014 image 16"
+            },
+            {
+              "name": "media_items/murals-deardads-img-17_dohia7",
+              "alt_text": "DearDads \u2014 image 17"
+            },
+            {
+              "name": "media_items/murals-deardads-img-18_mrkhoa",
+              "alt_text": "DearDads \u2014 image 18"
+            },
+            {
+              "name": "media_items/murals-deardads-img-19_wvaecp",
+              "alt_text": "DearDads \u2014 image 19"
+            }
+          ]
+        },
+        {
+          "title": "Freestyle",
+          "slug": "murals-freestyle",
+          "order": 1,
+          "cover_image": "covers/murals-freestyle-cover_yd9uww",
+          "media": [
+            {
+              "name": "media_items/murals-freestyle-img-1_bqnuci",
+              "alt_text": "Freestyle \u2014 image 1"
+            },
+            {
+              "name": "media_items/murals-freestyle-img-2_lll0rf",
+              "alt_text": "Freestyle \u2014 image 2"
+            },
+            {
+              "name": "media_items/murals-freestyle-img-3_ert4an",
+              "alt_text": "Freestyle \u2014 image 3"
+            },
+            {
+              "name": "media_items/murals-freestyle-img-4_dhf1uk",
+              "alt_text": "Freestyle \u2014 image 4"
+            }
+          ]
+        },
+        {
+          "title": "Garage",
+          "slug": "murals-garage",
+          "order": 2,
+          "cover_image": "covers/murals-garage-cover_apjtg4",
+          "media": [
+            {
+              "name": "media_items/murals-garage-img-1_cjskf2",
+              "alt_text": "Garage \u2014 image 1"
+            },
+            {
+              "name": "media_items/murals-garage-img-2_c0uaef",
+              "alt_text": "Garage \u2014 image 2"
+            },
+            {
+              "name": "media_items/murals-garage-img-3_kpesyl",
+              "alt_text": "Garage \u2014 image 3"
+            },
+            {
+              "name": "media_items/murals-garage-img-4_hzdhsx",
+              "alt_text": "Garage \u2014 image 4"
+            }
+          ]
+        },
+        {
+          "title": "Japanese",
+          "slug": "murals-japanese",
+          "order": 3,
+          "cover_image": "covers/murals-japanese-cover_fjvgp7",
+          "media": [
+            {
+              "name": "media_items/murals-japanese-img-1_p8w9ov",
+              "alt_text": "Japanese \u2014 image 1"
+            },
+            {
+              "name": "media_items/murals-japanese-img-2_yek5iz",
+              "alt_text": "Japanese \u2014 image 2"
+            },
+            {
+              "name": "media_items/murals-japanese-img-3_crdczg",
+              "alt_text": "Japanese \u2014 image 3"
+            },
+            {
+              "name": "media_items/murals-japanese-img-4_dpitmt",
+              "alt_text": "Japanese \u2014 image 4"
+            },
+            {
+              "name": "media_items/murals-japanese-img-5_u0oh7a",
+              "alt_text": "Japanese \u2014 image 5"
+            },
+            {
+              "name": "media_items/murals-japanese-img-6_bdokra",
+              "alt_text": "Japanese \u2014 image 6"
+            }
+          ]
+        },
+        {
+          "title": "Miam",
+          "slug": "murals-miam",
+          "order": 4,
+          "cover_image": "covers/murals-miam-cover_mczx3t",
+          "media": [
+            {
+              "name": "media_items/murals-miam-img-1_gzrebh",
+              "alt_text": "Miam \u2014 image 1"
+            },
+            {
+              "name": "media_items/murals-miam-img-2_bjr52e",
+              "alt_text": "Miam \u2014 image 2"
+            },
+            {
+              "name": "media_items/murals-miam-img-3_snxqeu",
+              "alt_text": "Miam \u2014 image 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fine Art",
+      "slug": "fine-art",
+      "projects": [
+        {
+          "title": "PROJECT A",
+          "slug": "fine-art-project-a",
+          "order": 0,
+          "cover_image": "covers/fine-art-project-a-cover_yicky9",
+          "media": [
+            {
+              "name": "media_items/fine-art-project-a-img-1_anrkvx",
+              "alt_text": "PROJECT A \u2014 image 1"
+            },
+            {
+              "name": "media_items/fine-art-project-a-img-2_l6crb2",
+              "alt_text": "PROJECT A \u2014 image 2"
+            },
+            {
+              "name": "media_items/fine-art-project-a-img-3_rdtlpu",
+              "alt_text": "PROJECT A \u2014 image 3"
+            }
+          ]
+        },
+        {
+          "title": "PROJECT B",
+          "slug": "fine-art-project-b",
+          "order": 1,
+          "cover_image": "covers/fine-art-project-b-cover_b4qohi",
+          "media": [
+            {
+              "name": "media_items/fine-art-project-b-img-1_poiboj",
+              "alt_text": "PROJECT B \u2014 image 1"
+            },
+            {
+              "name": "media_items/fine-art-project-b-img-2_kjipdb",
+              "alt_text": "PROJECT B \u2014 image 2"
+            },
+            {
+              "name": "media_items/fine-art-project-b-img-3_xj9cis",
+              "alt_text": "PROJECT B \u2014 image 3"
+            },
+            {
+              "name": "media_items/fine-art-project-b-img-4_xed1hv",
+              "alt_text": "PROJECT B \u2014 image 4"
+            },
+            {
+              "name": "media_items/fine-art-project-b-img-5_fbx5xu",
+              "alt_text": "PROJECT B \u2014 image 5"
+            },
+            {
+              "name": "media_items/fine-art-project-b-img-6_j1ilom",
+              "alt_text": "PROJECT B \u2014 image 6"
+            }
+          ]
+        },
+        {
+          "title": "PROJECT C",
+          "slug": "fine-art-project-c",
+          "order": 2,
+          "cover_image": "covers/fine-art-project-c-cover_punshh",
+          "media": [
+            {
+              "name": "media_items/fine-art-project-c-img-1_ursiix",
+              "alt_text": "PROJECT C \u2014 image 1"
+            },
+            {
+              "name": "media_items/fine-art-project-c-img-2_p7lrij",
+              "alt_text": "PROJECT C \u2014 image 2"
+            },
+            {
+              "name": "media_items/fine-art-project-c-img-3_acbk8x",
+              "alt_text": "PROJECT C \u2014 image 3"
+            }
+          ]
+        },
+        {
+          "title": "PROJECT D",
+          "slug": "fine-art-project-d",
+          "order": 3,
+          "cover_image": "covers/fine-art-project-d-cover_pfsuaz",
+          "media": [
+            {
+              "name": "media_items/fine-art-project-d-img-1_xk7rvj",
+              "alt_text": "PROJECT D \u2014 image 1"
+            },
+            {
+              "name": "media_items/fine-art-project-d-img-2_cnjerd",
+              "alt_text": "PROJECT D \u2014 image 2"
+            },
+            {
+              "name": "media_items/fine-art-project-d-img-3_tfhwh5",
+              "alt_text": "PROJECT D \u2014 image 3"
+            },
+            {
+              "name": "media_items/fine-art-project-d-img-4_cd2ccn",
+              "alt_text": "PROJECT D \u2014 image 4"
+            },
+            {
+              "name": "media_items/fine-art-project-d-img-5_dvrpfh",
+              "alt_text": "PROJECT D \u2014 image 5"
+            },
+            {
+              "name": "media_items/fine-art-project-d-img-6_az2rdz",
+              "alt_text": "PROJECT D \u2014 image 6"
+            },
+            {
+              "name": "media_items/fine-art-project-d-img-7_x5a47z",
+              "alt_text": "PROJECT D \u2014 image 7"
+            },
+            {
+              "name": "media_items/fine-art-project-d-img-8_n25gpo",
+              "alt_text": "PROJECT D \u2014 image 8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Graphic Design",
+      "slug": "graphic-design",
+      "projects": [
+        {
+          "title": "Bayls&Birds",
+          "slug": "graphic-design-baylsbirds",
+          "order": 0,
+          "cover_image": "covers/graphic-design-baylsbirds-cover_ewsixz",
+          "media": [
+            {
+              "name": "media_items/graphic-design-baylsbirds-img-1_nrrnoq",
+              "alt_text": "Bayls&Birds \u2014 image 1"
+            }
+          ]
+        },
+        {
+          "title": "DearDads",
+          "slug": "graphic-design-deardads",
+          "order": 1,
+          "cover_image": "covers/graphic-design-deardads-cover_qmy7sj",
+          "media": [
+            {
+              "name": "media_items/graphic-design-deardads-img-1_abpjcv",
+              "alt_text": "DearDads \u2014 image 1"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-2_wclxba",
+              "alt_text": "DearDads \u2014 image 2"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-3_cjmyyh",
+              "alt_text": "DearDads \u2014 image 3"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-4_xtfqgd",
+              "alt_text": "DearDads \u2014 image 4"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-5_h5f2lt",
+              "alt_text": "DearDads \u2014 image 5"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-6_s3dlmg",
+              "alt_text": "DearDads \u2014 image 6"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-7_dmewul",
+              "alt_text": "DearDads \u2014 image 7"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-8_vryywn",
+              "alt_text": "DearDads \u2014 image 8"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-9_kft56y",
+              "alt_text": "DearDads \u2014 image 9"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-10_hjxdno",
+              "alt_text": "DearDads \u2014 image 10"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-11_aqcd7u",
+              "alt_text": "DearDads \u2014 image 11"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-12_lxewo2",
+              "alt_text": "DearDads \u2014 image 12"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-13_bv3nw2",
+              "alt_text": "DearDads \u2014 image 13"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-14_pitg4i",
+              "alt_text": "DearDads \u2014 image 14"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-15_phxlgp",
+              "alt_text": "DearDads \u2014 image 15"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-16_pbllun",
+              "alt_text": "DearDads \u2014 image 16"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-17_voukwe",
+              "alt_text": "DearDads \u2014 image 17"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-18_oe5vyq",
+              "alt_text": "DearDads \u2014 image 18"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-19_j9hfzx",
+              "alt_text": "DearDads \u2014 image 19"
+            },
+            {
+              "name": "media_items/graphic-design-deardads-img-20_m7m1ug",
+              "alt_text": "DearDads \u2014 image 20"
+            }
+          ]
+        },
+        {
+          "title": "Drizzle",
+          "slug": "graphic-design-drizzle",
+          "order": 2,
+          "cover_image": "covers/graphic-design-drizzle-cover_dfn1yq",
+          "media": [
+            {
+              "name": "media_items/graphic-design-drizzle-img-1_wqqd8a",
+              "alt_text": "Drizzle \u2014 image 1"
+            },
+            {
+              "name": "media_items/graphic-design-drizzle-img-2_jddrrs",
+              "alt_text": "Drizzle \u2014 image 2"
+            },
+            {
+              "name": "media_items/graphic-design-drizzle-img-3_o8c1hh",
+              "alt_text": "Drizzle \u2014 image 3"
+            },
+            {
+              "name": "media_items/graphic-design-drizzle-img-4_ay35oz",
+              "alt_text": "Drizzle \u2014 image 4"
+            }
+          ]
+        },
+        {
+          "title": "Envia",
+          "slug": "graphic-design-envia",
+          "order": 3,
+          "cover_image": "covers/graphic-design-envia-cover_j8xszs",
+          "media": [
+            {
+              "name": "media_items/graphic-design-envia-img-1_mnw8qt",
+              "alt_text": "Envia \u2014 image 1"
+            },
+            {
+              "name": "media_items/graphic-design-envia-img-2_zxm4xq",
+              "alt_text": "Envia \u2014 image 2"
+            },
+            {
+              "name": "media_items/graphic-design-envia-img-3_gcbfkg",
+              "alt_text": "Envia \u2014 image 3"
+            },
+            {
+              "name": "media_items/graphic-design-envia-img-4_fix11y",
+              "alt_text": "Envia \u2014 image 4"
+            }
+          ]
+        },
+        {
+          "title": "Holina",
+          "slug": "graphic-design-holina",
+          "order": 4,
+          "cover_image": "covers/graphic-design-holina-cover_fdtq0m",
+          "media": [
+            {
+              "name": "media_items/graphic-design-holina-img-1_kq8hlt",
+              "alt_text": "Holina \u2014 image 1"
+            },
+            {
+              "name": "media_items/graphic-design-holina-img-2_tttvv8",
+              "alt_text": "Holina \u2014 image 2"
+            },
+            {
+              "name": "media_items/graphic-design-holina-img-3_haszvn",
+              "alt_text": "Holina \u2014 image 3"
+            },
+            {
+              "name": "media_items/graphic-design-holina-img-4_oryvzf",
+              "alt_text": "Holina \u2014 image 4"
+            },
+            {
+              "name": "media_items/graphic-design-holina-img-5_icilao",
+              "alt_text": "Holina \u2014 image 5"
+            }
+          ]
+        },
+        {
+          "title": "MikesVegan",
+          "slug": "graphic-design-mikesvegan",
+          "order": 5,
+          "cover_image": "covers/graphic-design-mikesvegan-cover_e4sbrb",
+          "media": [
+            {
+              "name": "media_items/graphic-design-mikesvegan-img-1_e4ckew",
+              "alt_text": "MikesVegan \u2014 image 1"
+            },
+            {
+              "name": "media_items/graphic-design-mikesvegan-img-2_ittam3",
+              "alt_text": "MikesVegan \u2014 image 2"
+            },
+            {
+              "name": "media_items/graphic-design-mikesvegan-img-3_ynibnl",
+              "alt_text": "MikesVegan \u2014 image 3"
+            },
+            {
+              "name": "media_items/graphic-design-mikesvegan-img-4_mbbziy",
+              "alt_text": "MikesVegan \u2014 image 4"
+            },
+            {
+              "name": "media_items/graphic-design-mikesvegan-img-5_dv6rw9",
+              "alt_text": "MikesVegan \u2014 image 5"
+            },
+            {
+              "name": "media_items/graphic-design-mikesvegan-img-6_dnlqgo",
+              "alt_text": "MikesVegan \u2014 image 6"
+            }
+          ]
+        },
+        {
+          "title": "Onyx",
+          "slug": "graphic-design-onyx",
+          "order": 6,
+          "cover_image": "covers/graphic-design-onyx-cover_utqaaz",
+          "media": [
+            {
+              "name": "media_items/graphic-design-onyx-img-1_r0pxa4",
+              "alt_text": "Onyx \u2014 image 1"
+            },
+            {
+              "name": "media_items/graphic-design-onyx-img-2_zhkglq",
+              "alt_text": "Onyx \u2014 image 2"
+            },
+            {
+              "name": "media_items/graphic-design-onyx-img-3_gq8sij",
+              "alt_text": "Onyx \u2014 image 3"
+            },
+            {
+              "name": "media_items/graphic-design-onyx-img-4_ijyffj",
+              "alt_text": "Onyx \u2014 image 4"
+            }
+          ]
+        },
+        {
+          "title": "Patio",
+          "slug": "graphic-design-patio",
+          "order": 7,
+          "cover_image": "covers/graphic-design-patio-cover_yjlzem",
+          "media": [
+            {
+              "name": "media_items/graphic-design-patio-img-1_sd1u8c",
+              "alt_text": "Patio \u2014 image 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Web Design",
+      "slug": "web-design",
+      "projects": [
+        {
+          "title": "DearDads",
+          "slug": "web-design-deardads",
+          "order": 0,
+          "cover_image": "covers/web-design-deardads-cover_r5lncw",
+          "media": [
+            {
+              "name": "media_items/web-design-deardads-img-3_c94n8i",
+              "alt_text": "DearDads \u2014 image 3"
+            },
+            {
+              "name": "media_items/web-design-deardads-img-8_czvavj",
+              "alt_text": "DearDads \u2014 image 8"
+            },
+            {
+              "name": "media_items/web-design-deardads-img-1_vhzepp",
+              "alt_text": "DearDads \u2014 image 1"
+            },
+            {
+              "name": "media_items/web-design-deardads-img-2_eqbhyb",
+              "alt_text": "DearDads \u2014 image 2"
+            },
+            {
+              "name": "media_items/web-design-deardads-img-4_gl3udx",
+              "alt_text": "DearDads \u2014 image 4"
+            },
+            {
+              "name": "media_items/web-design-deardads-img-5_ykg6mk",
+              "alt_text": "DearDads \u2014 image 5"
+            },
+            {
+              "name": "media_items/web-design-deardads-img-6_ip5ek7",
+              "alt_text": "DearDads \u2014 image 6"
+            },
+            {
+              "name": "media_items/web-design-deardads-img-7_da1cej",
+              "alt_text": "DearDads \u2014 image 7"
+            }
+          ]
+        },
+        {
+          "title": "Oasis",
+          "slug": "web-design-oasis",
+          "order": 1,
+          "cover_image": "covers/web-design-oasis-cover_dev8na",
+          "media": [
+            {
+              "name": "media_items/web-design-oasis-img-1_k6szcz",
+              "alt_text": "Oasis \u2014 image 1"
+            },
+            {
+              "name": "media_items/web-design-oasis-img-2_ysijio",
+              "alt_text": "Oasis \u2014 image 2"
+            }
+          ]
+        },
+        {
+          "title": "Onyx",
+          "slug": "web-design-onyx",
+          "order": 2,
+          "cover_image": "covers/web-design-onyx-cover_hs25nh",
+          "media": [
+            {
+              "name": "media_items/web-design-onyx-img-1_nymjty",
+              "alt_text": "Onyx \u2014 image 1"
+            },
+            {
+              "name": "media_items/web-design-onyx-img-2_vto6un",
+              "alt_text": "Onyx \u2014 image 2"
+            },
+            {
+              "name": "media_items/web-design-onyx-img-3_pvpy84",
+              "alt_text": "Onyx \u2014 image 3"
+            },
+            {
+              "name": "media_items/web-design-onyx-img-4_xub3r5",
+              "alt_text": "Onyx \u2014 image 4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

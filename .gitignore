@@ -26,3 +26,10 @@ Thumbs.db
 # --- Editors ---
 .vscode/
 .idea/
+
+# --- Raw source assets (uploaded to Cloudinary/Bunny, not served from repo) ---
+/finearthomepage/
+/graphicdesignhomepage/
+/muralhomepagephotos/
+/productdesignhomepage/
+*.MOV

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import CollageGrid from "@/components/CollageGrid";
 import type { Category, Tag } from "@/lib/api/types";
 
@@ -40,7 +41,10 @@ export default function PortfolioExplorer({
     [categories],
   );
 
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const searchParams = useSearchParams();
+  const initialCategory = searchParams.get("category");
+
+  const [activeCategory, setActiveCategory] = useState<string | null>(initialCategory);
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
 
@@ -74,7 +78,7 @@ export default function PortfolioExplorer({
   const activeTagLabel = availableTags.find((t) => t.slug === activeTag)?.name ?? "All";
 
   const projectGroups = useMemo(() => {
-    if (!activeCategory) return [];
+    if (!activeCategory || activeCategory === "fine-art") return [];
     const order: string[] = [];
     const bySlug = new Map<string, { title: string; tiles: MediaTile[] }>();
     for (const tile of visibleTiles) {
@@ -182,7 +186,7 @@ export default function PortfolioExplorer({
         ) : null}
       </div>
 
-      {activeCategory ? (
+      {activeCategory && activeCategory !== "fine-art" ? (
         <div className="flex flex-col gap-16">
           {projectGroups.map((group) => (
             <div key={group.title} className="border-t border-black pt-6">
