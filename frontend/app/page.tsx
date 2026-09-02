@@ -166,7 +166,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
           <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">MURALS</h2>
-            <p className="font-helvetica max-w-md text-sm text-gray-400 md:mb-2">
+            <p className="font-helvetica max-w-md text-base text-gray-400 md:mb-2">
               Large-scale works that transform walls into immersive brand and community
               experiences.
             </p>
@@ -199,7 +199,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
           <div className="mb-8 flex flex-col gap-4 border-b border-black pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">FINE ART</h2>
-            <p className="font-helvetica max-w-md text-sm text-gray-500 md:mb-2">
+            <p className="font-helvetica max-w-md text-base text-gray-500 md:mb-2">
               Original pieces exploring color, texture, and emotion across mixed media.
             </p>
           </div>
@@ -231,7 +231,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
           <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">GRAPHIC DESIGN</h2>
-            <p className="font-helvetica max-w-md text-sm text-gray-400 md:mb-2">
+            <p className="font-helvetica max-w-md text-base text-gray-400 md:mb-2">
               Visual systems and print work built to communicate with clarity and edge.
             </p>
           </div>
@@ -263,7 +263,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
           <div className="mb-8 flex flex-col gap-4 border-b border-black pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">WEB DESIGN</h2>
-            <p className="font-helvetica max-w-md text-sm text-gray-500 md:mb-2">
+            <p className="font-helvetica max-w-md text-base text-gray-500 md:mb-2">
               Digital experiences designed with the same eye for craft and
               storytelling as the physical work.
             </p>
@@ -296,7 +296,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
           <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">PRODUCT DESIGN</h2>
-            <p className="font-helvetica max-w-md text-sm text-gray-400 md:mb-2">
+            <p className="font-helvetica max-w-md text-base text-gray-400 md:mb-2">
               Physical and packaged goods designed with the same attention to
               form and detail.
             </p>
