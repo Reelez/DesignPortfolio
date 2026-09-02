@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, Anton } from "next/font/google";
+import localFont from "next/font/local";
 import SiteChrome from "@/components/SiteChrome";
 import "./globals.css";
 
@@ -20,6 +21,12 @@ const anton = Anton({
   weight: "400",
 });
 
+const helveticaNeue = localFont({
+  variable: "--font-helvetica-neue",
+  src: "../public/fonts/HelveticaNeue-Regular.ttf",
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Murales, fine art, diseño gráfico y brand design.",
@@ -29,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${display.variable} ${sans.variable} ${anton.variable} h-full antialiased`}
+      className={`${display.variable} ${sans.variable} ${anton.variable} ${helveticaNeue.variable} h-full antialiased`}
     >
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" />

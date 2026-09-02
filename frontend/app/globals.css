@@ -43,6 +43,10 @@ h1, h2, h3, .font-display {
   letter-spacing: -0.02em;
 }
 
+.font-helvetica {
+  font-family: var(--font-helvetica-neue), sans-serif;
+}
+
 .vertical-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
