@@ -83,8 +83,14 @@ export default async function Home() {
         </div>
         <div className="relative order-1 flex w-full flex-col justify-center bg-black p-6 text-white md:order-2 md:w-1/2 md:p-16">
           <div className="absolute top-6 left-6 right-6 flex items-start justify-between md:top-8 md:left-8 md:right-8">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/signature-white.png" alt="Julian Jeffreys" className="h-5 w-auto md:h-6" />
+            <a href="/">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/signature-white.png"
+                alt="Julian Jeffreys"
+                className="h-7 w-auto md:h-9"
+              />
+            </a>
             <MenuOverlay variant="dark" />
           </div>
           <div className="mt-14 text-right md:mt-0">
@@ -168,12 +174,12 @@ export default async function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[0, 1, 2].map((i) => (
               <div key={i}>
-                <div className="aspect-square overflow-hidden bg-gray-900">
+                <div className="overflow-hidden bg-gray-900">
                   {muralHomepageImages[i] ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       alt={murals[i]?.title ?? "Mural artwork"}
-                      className="h-full w-full object-cover"
+                      className="h-auto w-full"
                       src={muralHomepageImages[i]}
                       loading="lazy"
                       decoding="async"
@@ -200,12 +206,12 @@ export default async function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[0, 1, 2].map((i) => (
               <div key={i}>
-                <div className="aspect-[4/5] overflow-hidden bg-gray-100">
+                <div className="overflow-hidden bg-gray-100">
                   {fineArtHomepageImages[i] ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       alt={fineArt[i]?.title ?? "Fine art piece"}
-                      className="h-full w-full object-cover"
+                      className="h-auto w-full"
                       src={fineArtHomepageImages[i]}
                       loading="lazy"
                       decoding="async"
@@ -232,12 +238,12 @@ export default async function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[0, 1, 2].map((i) => (
               <div key={i}>
-                <div className="aspect-[4/5] overflow-hidden bg-gray-900">
+                <div className="overflow-hidden bg-gray-900">
                   {graphicDesignHomepageImages[i] ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       alt={graphicDesign[i]?.title ?? "Graphic design work"}
-                      className="h-full w-full object-cover"
+                      className="h-auto w-full"
                       src={graphicDesignHomepageImages[i]}
                       loading="lazy"
                       decoding="async"
@@ -265,12 +271,12 @@ export default async function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[0, 1, 2].map((i) => (
               <div key={i}>
-                <div className="aspect-[4/5] overflow-hidden bg-gray-100">
+                <div className="overflow-hidden bg-gray-100">
                   {webDesign[i]?.cover_image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       alt={webDesign[i].title}
-                      className="img-loading h-full w-full object-cover"
+                      className="img-loading h-auto w-full"
                       src={cloudinaryOptimize(webDesign[i].cover_image!, 500)}
                       loading="lazy"
                       decoding="async"
@@ -298,12 +304,12 @@ export default async function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[0, 1, 2].map((i) => (
               <div key={i}>
-                <div className="aspect-[4/5] overflow-hidden bg-gray-900">
+                <div className="overflow-hidden bg-gray-900">
                   {productDesignHomepageImages[i] ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       alt={productDesign[i]?.title ?? "Product design work"}
-                      className="h-full w-full object-cover"
+                      className="h-auto w-full"
                       src={productDesignHomepageImages[i]}
                       loading="lazy"
                       decoding="async"

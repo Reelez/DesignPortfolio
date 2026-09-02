@@ -21,7 +21,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
         <header className="sticky top-0 z-40 flex items-center justify-between border-b border-black bg-white px-6 py-4 sm:px-10">
           <Link href="/">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/signature-black.png" alt="Julian Jeffreys" className="h-6 w-auto" />
+            <img src="/signature-black.png" alt="Julian Jeffreys" className="h-8 w-auto" />
           </Link>
           <MenuOverlay variant="light" />
         </header>
