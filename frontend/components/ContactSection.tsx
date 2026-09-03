@@ -79,9 +79,9 @@ export default function ContactSection({
           </form>
         </div>
         {footerVideo ? (
-          <div className="flex items-center justify-center bg-[#F0C987] p-8 md:p-16">
+          <div className="flex items-center justify-center bg-white p-8 md:p-16">
             <video
-              className="h-auto w-full max-w-lg border-4 border-[#F0C987] shadow-2xl"
+              className="h-auto w-full max-w-lg shadow-2xl"
               src={footerVideo}
               autoPlay
               muted

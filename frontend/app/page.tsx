@@ -42,8 +42,7 @@ export default async function Home() {
   const buildBrandImage = brand[0]?.cover_image ?? projects[0]?.cover_image ?? null;
 
   // Static local images for the landing-page section previews (see
-  // /public/homepage). Web Design has no local folder yet, so it keeps
-  // pulling its cover image from the CMS.
+  // /public/homepage).
   const muralHomepageImages = [
     "/homepage/murals/dear-dads-mural.png",
     "/homepage/murals/japanese-restaurant-2.png",
@@ -58,6 +57,11 @@ export default async function Home() {
     "/homepage/graphic-design/graphic-design-home-page.png",
     "/homepage/graphic-design/holina-home-page.png",
     "/homepage/graphic-design/oasis-home-page.png",
+  ];
+  const webDesignHomepageImages = [
+    "/homepage/web-design/web-design-1.png",
+    "/homepage/web-design/web-design-2.png",
+    "/homepage/web-design/web-design-3.png",
   ];
   const productDesignHomepageImages = [
     "/homepage/product-design/product-design-home-page.png",
@@ -166,7 +170,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
           <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">MURALS</h2>
-            <p className="font-helvetica max-w-md text-base text-gray-400 md:mb-2">
+            <p className="font-helvetica max-w-md text-[13px] font-normal text-gray-400 md:mb-2">
               Large-scale works that transform walls into immersive brand and community
               experiences.
             </p>
@@ -199,7 +203,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
           <div className="mb-8 flex flex-col gap-4 border-b border-black pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">FINE ART</h2>
-            <p className="font-helvetica max-w-md text-base text-gray-500 md:mb-2">
+            <p className="font-helvetica max-w-md text-[13px] font-normal text-gray-500 md:mb-2">
               Original pieces exploring color, texture, and emotion across mixed media.
             </p>
           </div>
@@ -231,7 +235,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
           <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">GRAPHIC DESIGN</h2>
-            <p className="font-helvetica max-w-md text-base text-gray-400 md:mb-2">
+            <p className="font-helvetica max-w-md text-[13px] font-normal text-gray-400 md:mb-2">
               Visual systems and print work built to communicate with clarity and edge.
             </p>
           </div>
@@ -260,10 +264,10 @@ export default async function Home() {
 
       {/* BEGIN: Web Design Section */}
       <section className="relative border-b border-black bg-white text-black">
-        <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
+        <div className="mx-auto max-w-[100rem] px-8 py-24 md:px-16">
           <div className="mb-8 flex flex-col gap-4 border-b border-black pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">WEB DESIGN</h2>
-            <p className="font-helvetica max-w-md text-base text-gray-500 md:mb-2">
+            <p className="font-helvetica max-w-md text-[13px] font-normal text-gray-500 md:mb-2">
               Digital experiences designed with the same eye for craft and
               storytelling as the physical work.
             </p>
@@ -271,13 +275,13 @@ export default async function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[0, 1, 2].map((i) => (
               <div key={i}>
-                <div className="overflow-hidden bg-gray-100">
-                  {webDesign[i]?.cover_image ? (
+                <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+                  {webDesignHomepageImages[i] ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
-                      alt={webDesign[i].title}
-                      className="img-loading h-auto w-full"
-                      src={cloudinaryOptimize(webDesign[i].cover_image!, 500)}
+                      alt={webDesign[i]?.title ?? "Web design work"}
+                      className="h-full w-full object-cover"
+                      src={webDesignHomepageImages[i]}
                       loading="lazy"
                       decoding="async"
                     />
@@ -296,7 +300,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
           <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">PRODUCT DESIGN</h2>
-            <p className="font-helvetica max-w-md text-base text-gray-400 md:mb-2">
+            <p className="font-helvetica max-w-md text-[13px] font-normal text-gray-400 md:mb-2">
               Physical and packaged goods designed with the same attention to
               form and detail.
             </p>
