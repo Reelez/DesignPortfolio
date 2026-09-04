@@ -44,29 +44,29 @@ export default async function Home() {
   // Static local images for the landing-page section previews (see
   // /public/homepage).
   const muralHomepageImages = [
-    "/homepage/murals/dear-dads-mural.png",
-    "/homepage/murals/japanese-restaurant-2.png",
-    "/homepage/murals/mural-3.png",
+    "/homepage/murals/dear-dads-mural.webp",
+    "/homepage/murals/japanese-restaurant-2.webp",
+    "/homepage/murals/mural-3.webp",
   ];
   const fineArtHomepageImages = [
-    "/homepage/fine-art/fine-art-1.png",
-    "/homepage/fine-art/fine-art-2.png",
-    "/homepage/fine-art/fine-art-3.png",
+    "/homepage/fine-art/fine-art-1.webp",
+    "/homepage/fine-art/fine-art-2.webp",
+    "/homepage/fine-art/fine-art-3.webp",
   ];
   const graphicDesignHomepageImages = [
-    "/homepage/graphic-design/graphic-design-home-page.png",
-    "/homepage/graphic-design/holina-home-page.png",
-    "/homepage/graphic-design/oasis-home-page.png",
+    "/homepage/graphic-design/graphic-design-home-page.webp",
+    "/homepage/graphic-design/holina-home-page.webp",
+    "/homepage/graphic-design/oasis-home-page.webp",
   ];
   const webDesignHomepageImages = [
-    "/homepage/web-design/web-design-1.png",
-    "/homepage/web-design/web-design-2.png",
-    "/homepage/web-design/web-design-3.png",
+    "/homepage/web-design/web-design-1.webp",
+    "/homepage/web-design/web-design-2.webp",
+    "/homepage/web-design/web-design-3.webp",
   ];
   const productDesignHomepageImages = [
-    "/homepage/product-design/product-design-home-page.png",
-    "/homepage/product-design/product-design-home-page-2.png",
-    "/homepage/product-design/product-design-home-page-3.png",
+    "/homepage/product-design/product-design-home-page.webp",
+    "/homepage/product-design/product-design-home-page-2.webp",
+    "/homepage/product-design/product-design-home-page-3.webp",
   ];
 
   const contactEmail = site.contact_email || "HELLO@JULIANJEFFREYS.COM";
