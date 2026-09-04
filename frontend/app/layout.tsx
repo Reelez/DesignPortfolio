@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter, Anton } from "next/font/google";
 import localFont from "next/font/local";
 import SiteChrome from "@/components/SiteChrome";
@@ -30,6 +30,11 @@ const helveticaNeue = localFont({
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Murales, fine art, diseño gráfico y brand design.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

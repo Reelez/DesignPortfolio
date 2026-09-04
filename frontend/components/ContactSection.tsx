@@ -13,7 +13,7 @@ export default function ContactSection({
 }) {
   return (
     <section id="contact" className="relative bg-black text-white">
-      <div className="grid min-h-screen grid-cols-1 md:grid-cols-2">
+      <div className="grid min-h-dvh grid-cols-1 md:grid-cols-2">
         <div className="flex flex-col justify-center p-8 md:p-16">
           <h2 className="font-anton mb-8 text-5xl leading-[0.9] md:text-7xl">
             LET&apos;S CREATE

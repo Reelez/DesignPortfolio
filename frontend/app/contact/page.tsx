@@ -7,8 +7,8 @@ export default async function ContactPage() {
   const contactEmail = site.contact_email || "HELLO@JULIANJEFFREYS.COM";
 
   return (
-    <div className="relative bg-black text-white">
-      <div className="absolute top-8 left-8 right-8 z-10 flex items-start justify-between">
+    <div className="relative flex min-h-dvh flex-col bg-black text-white">
+      <div className="relative z-10 flex items-start justify-between p-8">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/signature-white.png" alt="Julian Jeffreys" className="h-6 w-auto" />
         <MenuOverlay variant="dark" />

@@ -74,7 +74,7 @@ export default async function Home() {
   return (
     <div className="bg-white text-black antialiased">
       {/* BEGIN: Hero Section */}
-      <section className="relative flex h-screen flex-col md:flex-row">
+      <section className="relative flex h-[170dvh] flex-col md:h-dvh md:flex-row">
         <div className="relative order-2 w-full flex-1 bg-black md:order-1 md:w-1/2 md:flex-none">
           <video
             className="h-full w-full object-cover"
@@ -85,8 +85,8 @@ export default async function Home() {
             playsInline
           />
         </div>
-        <div className="relative order-1 flex w-full flex-col justify-center bg-black p-6 text-white md:order-2 md:w-1/2 md:p-16">
-          <div className="absolute top-6 left-6 right-6 flex items-start justify-between md:top-8 md:left-8 md:right-8">
+        <div className="relative order-1 flex h-[38dvh] w-full flex-col bg-black p-6 text-white md:order-2 md:h-auto md:w-1/2 md:p-16">
+          <div className="flex items-start justify-between">
             <a href="/">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -97,7 +97,7 @@ export default async function Home() {
             </a>
             <MenuOverlay variant="dark" />
           </div>
-          <div className="mt-14 text-right md:mt-0">
+          <div className="flex flex-1 flex-col justify-end pb-0 text-right md:justify-center">
             <h2 className="font-anton flex flex-col gap-1 text-3xl leading-none sm:text-4xl md:gap-2 md:text-7xl lg:text-8xl">
               <span>MURALS</span>
               <span>FINE ART</span>
@@ -105,12 +105,6 @@ export default async function Home() {
               <span>BRAND DESIGN</span>
               <span>GRAPHIC DESIGN</span>
             </h2>
-            <a
-              href="#work"
-              className="mt-6 inline-block border border-white px-8 py-3 text-sm tracking-widest transition-colors hover:bg-white hover:text-black md:mt-16"
-            >
-              VIEW WORK →
-            </a>
           </div>
         </div>
       </section>
@@ -120,7 +114,7 @@ export default async function Home() {
       <section className="relative mx-auto max-w-7xl border-b border-black px-8 py-24 md:px-16">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
           <div>
-            <p className="mb-12 text-xs tracking-widest uppercase">
+            <p className="mb-12 hidden text-xs tracking-widest uppercase md:block">
               Visual art, murals, and design built around one idea:
               <br />
               every brand deserves a world of its own.
@@ -190,10 +184,10 @@ export default async function Home() {
                     />
                   ) : null}
                 </div>
-                {i === 0 ? <ViewMoreButton category="murals" variant="dark" /> : null}
               </div>
             ))}
           </div>
+          <ViewMoreButton category="murals" variant="dark" />
         </div>
       </section>
       {/* END: Murals Section */}
@@ -222,10 +216,10 @@ export default async function Home() {
                     />
                   ) : null}
                 </div>
-                {i === 0 ? <ViewMoreButton category="fine-art" variant="light" /> : null}
               </div>
             ))}
           </div>
+          <ViewMoreButton category="fine-art" variant="light" />
         </div>
       </section>
       {/* END: Fine Art Section */}
@@ -254,10 +248,10 @@ export default async function Home() {
                     />
                   ) : null}
                 </div>
-                {i === 0 ? <ViewMoreButton category="graphic-design" variant="dark" /> : null}
               </div>
             ))}
           </div>
+          <ViewMoreButton category="graphic-design" variant="dark" />
         </div>
       </section>
       {/* END: Graphic Design Section */}
@@ -287,10 +281,10 @@ export default async function Home() {
                     />
                   ) : null}
                 </div>
-                {i === 0 ? <ViewMoreButton category="web-design" variant="light" /> : null}
               </div>
             ))}
           </div>
+          <ViewMoreButton category="web-design" variant="light" />
         </div>
       </section>
       {/* END: Web Design Section */}
@@ -320,10 +314,10 @@ export default async function Home() {
                     />
                   ) : null}
                 </div>
-                {i === 0 ? <ViewMoreButton category="product-design" variant="dark" /> : null}
               </div>
             ))}
           </div>
+          <ViewMoreButton category="product-design" variant="dark" />
         </div>
       </section>
       {/* END: Product Design Section */}
