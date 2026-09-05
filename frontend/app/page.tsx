@@ -61,8 +61,8 @@ export default async function Home() {
   ];
   const webDesignHomepageImages = [
     "/homepage/web-design/web-design-1.webp",
-    "/homepage/web-design/web-design-2.webp",
     "/homepage/web-design/web-design-3.webp",
+    "/homepage/web-design/web-design-2.webp",
   ];
   const productDesignHomepageImages = [
     "/homepage/product-design/product-design-home-page.webp",
