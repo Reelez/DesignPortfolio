@@ -115,7 +115,7 @@ export default async function Home() {
       <section className="relative mx-auto max-w-7xl border-b border-black px-8 py-24 md:px-16">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
           <div>
-            <p className="mb-12 hidden text-xs tracking-widest uppercase md:block">
+            <p className="font-helvetica mb-12 hidden text-xs tracking-widest uppercase md:block">
               Visual art, murals, and design built around one idea:
               <br />
               every brand deserves a world of its own.
@@ -129,10 +129,10 @@ export default async function Home() {
             </h2>
           </div>
           <div className="pt-12">
-            <p className="mb-12 border-b border-black pb-4 text-xs font-medium tracking-widest uppercase">
+            <p className="font-helvetica mb-12 border-b border-black pb-4 text-xs font-medium tracking-widest uppercase">
               BASED IN NORTH CAROLINA, AVAILABLE WORLDWIDE
             </p>
-            <div className="max-w-md space-y-6 text-sm leading-relaxed">
+            <div className="font-helvetica max-w-md space-y-6 text-sm leading-relaxed">
               <p>
                 I&apos;m Julian Jeffreys, a self-taught visual artist, designer, and
                 muralist creating work that gives brands and spaces a distinct point of
