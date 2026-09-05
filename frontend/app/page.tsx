@@ -255,8 +255,8 @@ export default async function Home() {
           <HomeImageGrid
             images={webDesignHomepageImages}
             alts={webDesign.map((p, i) => p?.title ?? `Web design work ${i + 1}`)}
-            tileClassName="aspect-[4/3] flex w-full items-center justify-center overflow-hidden bg-gray-900"
-            imgClassName="h-full w-full object-contain"
+            tileClassName="block w-full overflow-hidden"
+            imgClassName="h-auto w-full"
           />
           <ViewMoreButton category="web-design" variant="dark" />
         </div>
