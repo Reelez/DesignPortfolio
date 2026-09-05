@@ -3,8 +3,19 @@ import { getSiteSettings } from "@/lib/api/site";
 import { cloudinaryOptimize } from "@/lib/cloudinary";
 import MenuOverlay from "@/components/MenuOverlay";
 
+const FALLBACK_BIO = `I'm a self-taught visual artist, designer, and muralist based in North Carolina, with more than a decade of professional experience spanning murals, fine art, graphic design, and brand identity. Working across different disciplines has shaped the way I approach each project, allowing the style and execution to be built around the individual brand, space, or idea rather than a predetermined aesthetic.
+
+Versatility is a major part of my work. Depending on what a project calls for, that can mean bold graphic compositions, abstract work, detailed realism, or the development of a complete visual identity. Rather than bringing the same look to every project, the goal is to create something intentional that feels specific to the client and the environment it lives in.
+
+Projects that begin from the ground up are especially rewarding. There's something unique about taking an initial sketch, logo, or idea and developing it into an entire visual language, one that can extend through artwork, interiors, branding, and the overall identity of a business. The work isn't simply about making something look good; it's about creating a feeling and using art and design to strengthen the story surrounding a brand or space.
+
+My process is straightforward and collaborative. Concepts are developed visually before execution so clients have a clear understanding of the direction from the beginning. Once that direction is established, attention to detail and consistency carry the original idea through to the finished work.
+
+Over the years, my work has taken me throughout North Carolina as well as New York and Portland, with projects ranging from individual artworks and design work to large-scale murals and complete brand environments.`;
+
 export default async function AboutPage() {
   const site = await getSiteSettings();
+  const bio = site.bio || FALLBACK_BIO;
 
   const socialLinks = [
     { label: "Instagram", url: site.instagram_url },
@@ -37,9 +48,9 @@ export default async function AboutPage() {
             />
           ) : null}
           <div className="flex flex-col gap-6">
-            {site.bio ? (
-              <p className="max-w-xl whitespace-pre-line text-sm leading-relaxed">{site.bio}</p>
-            ) : null}
+            <p className="font-helvetica max-w-xl whitespace-pre-line text-sm leading-relaxed">
+              {bio}
+            </p>
             {socialLinks.length > 0 || site.contact_email ? (
               <ul className="flex flex-wrap gap-6 border-t border-black pt-6">
                 {socialLinks.map((link) => (
