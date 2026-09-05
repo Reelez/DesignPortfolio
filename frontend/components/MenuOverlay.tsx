@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const LINKS = [
+  { href: "/", label: "Home" },
   { href: "/#work", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -55,8 +56,10 @@ export default function MenuOverlay({ variant = "dark" }: { variant?: "dark" | "
         aria-hidden={!open}
       >
         <div className="flex items-start justify-between">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/signature-white.png" alt="Julian Jeffreys" className="h-6 w-auto" />
+          <Link href="/" onClick={() => setOpen(false)}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/signature-white.png" alt="Julian Jeffreys" className="h-6 w-auto" />
+          </Link>
           <button
             type="button"
             onClick={() => setOpen(false)}

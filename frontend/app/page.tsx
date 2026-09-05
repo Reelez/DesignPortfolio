@@ -4,6 +4,7 @@ import { getSiteSettings } from "@/lib/api/site";
 import { cloudinaryOptimize } from "@/lib/cloudinary";
 import ContactSection from "@/components/ContactSection";
 import MenuOverlay from "@/components/MenuOverlay";
+import HomeImageGrid from "@/components/HomeImageGrid";
 
 function ViewMoreButton({
   category,
@@ -169,24 +170,12 @@ export default async function Home() {
               experiences.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[0, 1, 2].map((i) => (
-              <div key={i}>
-                <div className="overflow-hidden bg-gray-900">
-                  {muralHomepageImages[i] ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      alt={murals[i]?.title ?? "Mural artwork"}
-                      className="h-auto w-full"
-                      src={muralHomepageImages[i]}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : null}
-                </div>
-              </div>
-            ))}
-          </div>
+          <HomeImageGrid
+            images={muralHomepageImages}
+            alts={murals.map((p, i) => p?.title ?? `Mural artwork ${i + 1}`)}
+            tileClassName="block w-full overflow-hidden bg-gray-900"
+            imgClassName="h-auto w-full"
+          />
           <ViewMoreButton category="murals" variant="dark" />
         </div>
       </section>
@@ -201,24 +190,12 @@ export default async function Home() {
               Original pieces exploring color, texture, and emotion across mixed media.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[0, 1, 2].map((i) => (
-              <div key={i}>
-                <div className="overflow-hidden bg-gray-100">
-                  {fineArtHomepageImages[i] ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      alt={fineArt[i]?.title ?? "Fine art piece"}
-                      className="h-auto w-full"
-                      src={fineArtHomepageImages[i]}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : null}
-                </div>
-              </div>
-            ))}
-          </div>
+          <HomeImageGrid
+            images={fineArtHomepageImages}
+            alts={fineArt.map((p, i) => p?.title ?? `Fine art piece ${i + 1}`)}
+            tileClassName="block w-full overflow-hidden bg-gray-100"
+            imgClassName="h-auto w-full"
+          />
           <ViewMoreButton category="fine-art" variant="light" />
         </div>
       </section>
@@ -233,94 +210,58 @@ export default async function Home() {
               Visual systems and print work built to communicate with clarity and edge.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[0, 1, 2].map((i) => (
-              <div key={i}>
-                <div className="overflow-hidden bg-gray-900">
-                  {graphicDesignHomepageImages[i] ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      alt={graphicDesign[i]?.title ?? "Graphic design work"}
-                      className="h-auto w-full"
-                      src={graphicDesignHomepageImages[i]}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : null}
-                </div>
-              </div>
-            ))}
-          </div>
+          <HomeImageGrid
+            images={graphicDesignHomepageImages}
+            alts={graphicDesign.map((p, i) => p?.title ?? `Graphic design work ${i + 1}`)}
+            tileClassName="block w-full overflow-hidden bg-gray-900"
+            imgClassName="h-auto w-full"
+          />
           <ViewMoreButton category="graphic-design" variant="dark" />
         </div>
       </section>
       {/* END: Graphic Design Section */}
 
-      {/* BEGIN: Web Design Section */}
-      <section className="relative border-b border-black bg-white text-black">
-        <div className="mx-auto max-w-[100rem] px-8 py-24 md:px-16">
-          <div className="mb-8 flex flex-col gap-4 border-b border-black pb-4 md:flex-row md:items-end md:gap-6">
-            <h2 className="font-anton text-6xl md:text-8xl">WEB DESIGN</h2>
-            <p className="font-helvetica max-w-md text-[13px] font-normal text-gray-500 md:mb-2">
-              Digital experiences designed with the same eye for craft and
-              storytelling as the physical work.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[0, 1, 2].map((i) => (
-              <div key={i}>
-                <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-                  {webDesignHomepageImages[i] ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      alt={webDesign[i]?.title ?? "Web design work"}
-                      className="h-full w-full object-cover"
-                      src={webDesignHomepageImages[i]}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : null}
-                </div>
-              </div>
-            ))}
-          </div>
-          <ViewMoreButton category="web-design" variant="light" />
-        </div>
-      </section>
-      {/* END: Web Design Section */}
-
       {/* BEGIN: Product Design Section */}
-      <section className="relative border-b border-white bg-black text-white">
+      <section className="relative border-b border-black bg-white text-black">
         <div className="mx-auto max-w-7xl px-8 py-24 md:px-16">
-          <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
+          <div className="mb-8 flex flex-col gap-4 border-b border-black pb-4 md:flex-row md:items-end md:gap-6">
             <h2 className="font-anton text-6xl md:text-8xl">PRODUCT DESIGN</h2>
-            <p className="font-helvetica max-w-md text-[13px] font-normal text-gray-400 md:mb-2">
+            <p className="font-helvetica max-w-md text-[13px] font-normal text-gray-500 md:mb-2">
               Physical and packaged goods designed with the same attention to
               form and detail.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[0, 1, 2].map((i) => (
-              <div key={i}>
-                <div className="overflow-hidden bg-gray-900">
-                  {productDesignHomepageImages[i] ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      alt={productDesign[i]?.title ?? "Product design work"}
-                      className="h-auto w-full"
-                      src={productDesignHomepageImages[i]}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : null}
-                </div>
-              </div>
-            ))}
-          </div>
-          <ViewMoreButton category="product-design" variant="dark" />
+          <HomeImageGrid
+            images={productDesignHomepageImages}
+            alts={productDesign.map((p, i) => p?.title ?? `Product design work ${i + 1}`)}
+            tileClassName="block w-full overflow-hidden bg-gray-100"
+            imgClassName="h-auto w-full"
+          />
+          <ViewMoreButton category="product-design" variant="light" />
         </div>
       </section>
       {/* END: Product Design Section */}
+
+      {/* BEGIN: Web Design Section */}
+      <section className="relative border-b border-white bg-black text-white">
+        <div className="mx-auto max-w-[100rem] px-8 py-24 md:px-16">
+          <div className="mb-8 flex flex-col gap-4 border-b border-white pb-4 md:flex-row md:items-end md:gap-6">
+            <h2 className="font-anton text-6xl md:text-8xl">WEB DESIGN</h2>
+            <p className="font-helvetica max-w-md text-[13px] font-normal text-gray-400 md:mb-2">
+              Digital experiences designed with the same eye for craft and
+              storytelling as the physical work.
+            </p>
+          </div>
+          <HomeImageGrid
+            images={webDesignHomepageImages}
+            alts={webDesign.map((p, i) => p?.title ?? `Web design work ${i + 1}`)}
+            tileClassName="aspect-[4/3] flex w-full items-center justify-center overflow-hidden bg-gray-900"
+            imgClassName="h-full w-full object-contain"
+          />
+          <ViewMoreButton category="web-design" variant="dark" />
+        </div>
+      </section>
+      {/* END: Web Design Section */}
 
       {/* BEGIN: Build Your Brand Section */}
       <section className="relative border-b border-black bg-[#F9F9F9] text-black">

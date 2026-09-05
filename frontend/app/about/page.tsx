@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getSiteSettings } from "@/lib/api/site";
 import { cloudinaryOptimize } from "@/lib/cloudinary";
 import MenuOverlay from "@/components/MenuOverlay";
@@ -14,8 +15,10 @@ export default async function AboutPage() {
   return (
     <div className="relative min-h-screen bg-white text-black">
       <div className="absolute top-8 left-8 right-8 z-10 flex items-start justify-between">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/signature-black.png" alt="Julian Jeffreys" className="h-6 w-auto" />
+        <Link href="/">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/signature-black.png" alt="Julian Jeffreys" className="h-6 w-auto" />
+        </Link>
         <MenuOverlay variant="light" />
       </div>
 
