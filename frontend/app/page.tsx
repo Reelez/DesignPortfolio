@@ -129,7 +129,7 @@ export default async function Home() {
             </h2>
           </div>
           <div className="pt-12">
-            <p className="font-helvetica mb-12 border-b border-black pb-4 text-xs font-medium tracking-widest uppercase">
+            <p className="font-helvetica mb-12 border-b border-black pb-4 text-xs font-normal tracking-widest uppercase">
               BASED IN NORTH CAROLINA, AVAILABLE WORLDWIDE
             </p>
             <div className="font-helvetica max-w-md space-y-6 text-sm leading-relaxed">
